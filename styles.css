@@ -1,0 +1,336 @@
+﻿/* ================================================
+   PEPI'S LOMOS — styles.css
+   Paleta: naranja dorado #F5A623, negro #1A1A1A,
+           crema cálido #FAF3E0, acento oscuro #B8860B
+   ================================================ */
+
+/* ─── RESET Y BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: #FAF3E0;
+  color: #1A1A1A;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── HEADER ─── */
+.site-header {
+  background-color: #1A1A1A;
+  color: #FAF3E0;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 6px solid #F5A623;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (min-width: 500px) {
+  .header-inner { flex-direction: row; text-align: left; }
+}
+
+.header-logo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid #F5A623;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.site-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #F5A623;
+  text-shadow: 2px 2px 0 #000;
+  font-family: 'Georgia', serif;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #e8d5a3;
+  margin-top: 0.25rem;
+}
+
+/* ─── NAVBAR ─── */
+.category-nav {
+  background-color: #F5A623;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid #1A1A1A;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.category-nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  list-style: none;
+  gap: 0;
+  padding: 0;
+  scrollbar-width: none;
+}
+
+.category-nav ul::-webkit-scrollbar { display: none; }
+
+.category-nav ul li a {
+  display: block;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Georgia', serif;
+  border-right: 2px solid rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+
+.category-nav ul li:last-child a { border-right: none; }
+
+.category-nav ul li a:hover,
+.category-nav ul li a:focus {
+  background-color: #1A1A1A;
+  color: #F5A623;
+  outline: none;
+}
+
+/* ─── MAIN MENU ─── */
+.menu {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 0 2rem;
+}
+
+/* ─── SECTION ─── */
+.menu-section {
+  padding: 2rem 1rem 1.5rem;
+  border-bottom: 3px dashed #c8a84b;
+}
+
+.menu-section:last-child { border-bottom: none; }
+
+.section-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  border-left: 6px solid #F5A623;
+  padding-left: 0.65rem;
+  margin-bottom: 0.4rem;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-icon { margin-right: 0.25rem; }
+
+.section-desc {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: #6b5a2e;
+  margin-bottom: 1.2rem;
+  padding-left: 0.9rem;
+}
+
+/* ─── ITEM LIST ─── */
+.item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.menu-item {
+  padding: 0.9rem 0.5rem;
+  border-bottom: 1px solid #e0cc99;
+  position: relative;
+}
+
+.menu-item:last-child { border-bottom: none; }
+
+/* Nombre + puntos + precio */
+.item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.item-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: 'Georgia', serif;
+}
+
+.item-dots {
+  flex: 1;
+  height: 1px;
+  border-bottom: 2px dotted #c8a84b;
+  margin: 0 0.4rem;
+  min-width: 1rem;
+  position: relative;
+  top: -0.35em;
+}
+
+.item-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #B8860B;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: 'Georgia', serif;
+}
+
+.item-desc {
+  font-size: 0.85rem;
+  color: #4a3b1e;
+  font-style: italic;
+  padding-left: 0.1rem;
+  line-height: 1.4;
+}
+
+/* Badge destacado */
+.badge {
+  display: inline-block;
+  margin-top: 0.4rem;
+  background-color: #F5A623;
+  color: #1A1A1A;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  border: 1.5px solid #1A1A1A;
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  background-color: #1A1A1A;
+  color: #FAF3E0;
+  padding: 2.5rem 1rem 1.5rem;
+  border-top: 6px solid #F5A623;
+}
+
+.footer-inner {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #F5A623;
+  object-fit: cover;
+}
+
+.footer-block { width: 100%; }
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #F5A623;
+  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+}
+
+.footer-block p {
+  font-size: 0.9rem;
+  color: #e8d5a3;
+  line-height: 1.7;
+}
+
+.footer-block strong { color: #FAF3E0; }
+
+/* Instagram link */
+.ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #F5A623;
+  color: #1A1A1A;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border: 2px solid #F5A623;
+  transition: background 0.2s, color 0.2s;
+  font-family: 'Georgia', serif;
+}
+
+.ig-link:hover, .ig-link:focus {
+  background-color: transparent;
+  color: #F5A623;
+  outline: none;
+}
+
+.ig-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: #7a6a4a;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* ─── DESKTOP tweaks ─── */
+@media (min-width: 600px) {
+  .footer-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-logo { align-self: center; }
+
+  .footer-block { flex: 1; min-width: 180px; }
+
+  .footer-copy { flex-basis: 100%; }
+}
+
+@media (min-width: 600px) {
+  .menu-section { padding: 2.5rem 1.5rem 2rem; }
+}
+
+/* Active nav link (set by JS on scroll) */
+.category-nav ul li a.active {
+  background-color: #1A1A1A;
+  color: #F5A623;
+}
