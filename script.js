@@ -1,40 +1,40 @@
-﻿// ================================================
-// PEPI'S LOMOS — script.js
-// Navbar: resaltar seccion activa al hacer scroll
-// ================================================
+﻿/* ================================================
+   PEPI'S LOMOS — script.js  (v3)
+   1. Scroll suave + nav activo
+   2. Animaciones de entrada (Intersection Observer)
+   3. Descripciones expandibles
+   4. Boton volver arriba
+   ================================================ */
 
 (function () {
   'use strict';
 
-  const navbar = document.getElementById('navbar');
-  const sections = document.querySelectorAll('.menu-section');
-  const navLinks = document.querySelectorAll('.category-nav a');
+  /* ─── 1. SCROLL SUAVE + NAV ACTIVO ─── */
 
-  // --- Smooth scroll offset (altura de la navbar sticky) ---
+  var navbar  = document.getElementById('navbar');
+  var sections = document.querySelectorAll('.menu-section');
+  var navLinks = document.querySelectorAll('.nav-card');
+
   navLinks.forEach(function (link) {
     link.addEventListener('click', function (e) {
-      const targetId = link.getAttribute('href').slice(1);
-      const target = document.getElementById(targetId);
+      var targetId = link.getAttribute('href').slice(1);
+      var target = document.getElementById(targetId);
       if (!target) return;
       e.preventDefault();
-      const navHeight = navbar ? navbar.offsetHeight : 0;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      var navH = navbar ? navbar.offsetHeight : 0;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - navH;
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
   });
 
-  // --- Resaltar enlace activo segun scroll ---
   function setActiveLink() {
-    const navHeight = navbar ? navbar.offsetHeight : 0;
-    let current = '';
-
-    sections.forEach(function (section) {
-      const sectionTop = section.offsetTop - navHeight - 20;
-      if (window.pageYOffset >= sectionTop) {
-        current = section.getAttribute('id');
+    var navH = navbar ? navbar.offsetHeight : 0;
+    var current = '';
+    sections.forEach(function (sec) {
+      if (window.pageYOffset >= sec.offsetTop - navH - 32) {
+        current = sec.getAttribute('id');
       }
     });
-
     navLinks.forEach(function (link) {
       link.classList.remove('active');
       if (link.getAttribute('href') === '#' + current) {
@@ -45,4 +45,93 @@
 
   window.addEventListener('scroll', setActiveLink, { passive: true });
   setActiveLink();
+
+
+  /* ─── 2. ANIMACIONES DE ENTRADA (Intersection Observer) ─── */
+
+  var cards = document.querySelectorAll('.product-card');
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    cards.forEach(function (card) { observer.observe(card); });
+  } else {
+    /* Fallback: mostrar todo si el navegador no soporta IO */
+    cards.forEach(function (card) { card.classList.add('visible'); });
+  }
+
+
+  /* ─── 3. DESCRIPCIONES EXPANDIBLES ─── */
+
+  /*
+   * Para cada .card-desc chequeamos si el texto esta truncado.
+   * Si lo esta, insertamos un boton "Ver mas" que al hacer clic
+   * expande la descripcion y cambia el texto a "Ver menos".
+   */
+  var descs = document.querySelectorAll('.card-desc');
+
+  descs.forEach(function (desc) {
+    /* Necesitamos esperar al layout para medir el overflow */
+    requestAnimationFrame(function () {
+      var isClamped = desc.scrollHeight > desc.clientHeight + 2;
+
+      if (!isClamped) return; /* Descripcion corta: no hace falta boton */
+
+      var btn = document.createElement('button');
+      btn.className = 'btn-expand';
+      btn.textContent = 'Ver mas';
+      btn.setAttribute('aria-expanded', 'false');
+
+      btn.addEventListener('click', function () {
+        var expanded = desc.classList.toggle('expanded');
+        btn.textContent = expanded ? 'Ver menos' : 'Ver mas';
+        btn.setAttribute('aria-expanded', String(expanded));
+      });
+
+      /* Insertar el boton justo despues de la descripcion */
+      desc.insertAdjacentElement('afterend', btn);
+    });
+  });
+
+
+  /* ─── 4. BOTON VOLVER ARRIBA ─── */
+
+  /* Crear el boton dinamicamente */
+  var btnTop = document.createElement('button');
+  btnTop.className = 'btn-top';
+  btnTop.setAttribute('aria-label', 'Volver al inicio');
+  btnTop.setAttribute('title', 'Volver arriba');
+  btnTop.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
+    '<polyline points="18 15 12 9 6 15"></polyline></svg>';
+
+  document.body.appendChild(btnTop);
+
+  var showThreshold = 280; /* px de scroll para mostrar el boton */
+
+  function toggleBtnTop() {
+    if (window.pageYOffset > showThreshold) {
+      btnTop.classList.add('visible');
+    } else {
+      btnTop.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBtnTop, { passive: true });
+  toggleBtnTop();
+
+  btnTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
 })();
