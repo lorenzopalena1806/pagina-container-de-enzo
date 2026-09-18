@@ -456,3 +456,87 @@ ul { list-style: none; }
   .header-logo { width: 95px; height: 95px; }
 }
 
+
+
+/* ================================================
+   TIPOGRAFIAS POR SECCION (Google Fonts)
+   Lomitos   → Bebas Neue      (condensada, impacto maximo)
+   Papas     → Fjalla One      (gruesa, solida)
+   Bebidas   → Yanone Kaffeesatz (condensada, fresca)
+   Postres   → Dosis ExtraBold  (redondeada, calida)
+   ================================================ */
+
+/* LOMITOS — Bebas Neue */
+#lomitos .card-name {
+  font-family: 'Bebas Neue', 'Georgia', serif;
+  font-size: 1.18rem;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+#lomitos .card-price {
+  font-family: 'Bebas Neue', 'Georgia', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+#lomitos .section-title {
+  font-family: 'Bebas Neue', 'Georgia', serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* PAPAS — Fjalla One */
+#papas .card-name {
+  font-family: 'Fjalla One', 'Georgia', serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+#papas .card-price {
+  font-family: 'Fjalla One', 'Georgia', serif;
+  font-size: 1.08rem;
+}
+#papas .section-title {
+  font-family: 'Fjalla One', 'Georgia', serif;
+  font-size: 1.65rem;
+  letter-spacing: 0.05em;
+}
+
+/* BEBIDAS — Yanone Kaffeesatz Bold */
+#bebidas .card-name {
+  font-family: 'Yanone Kaffeesatz', 'Georgia', serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+}
+#bebidas .card-price {
+  font-family: 'Yanone Kaffeesatz', 'Georgia', serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+#bebidas .section-title {
+  font-family: 'Yanone Kaffeesatz', 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+/* POSTRES — Dosis ExtraBold */
+#postres .card-name {
+  font-family: 'Dosis', 'Georgia', serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+#postres .card-price {
+  font-family: 'Dosis', 'Georgia', serif;
+  font-weight: 800;
+  font-size: 1.08rem;
+}
+#postres .section-title {
+  font-family: 'Dosis', 'Georgia', serif;
+  font-weight: 800;
+  font-size: 1.65rem;
+  letter-spacing: 0.04em;
+}
