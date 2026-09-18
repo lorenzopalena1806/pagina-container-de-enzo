@@ -3,218 +3,387 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pepi s Lomos — Carta digital. Los mejores lomitos artesanales de la ciudad." />
-  <title>Pepi s Lomos — Carta</title>
+  <meta name="description" content="Pepi's Lomos — Carta digital. Los mejores lomitos artesanales." />
+  <title>Pepi's Lomos — Carta</title>
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
-      <img src="logo.png" alt="Logo Pepis Lomos" class="header-logo" />
+      <img src="logo.png" alt="Logo Pepi's Lomos" class="header-logo" />
       <div class="header-text">
-        <h1 class="site-title">Pepi s Lomos</h1>
-        <p class="tagline">Lomitos de autor, hechos con amor y fuego.</p>
+        <h1 class="site-title">Pepi's Lomos</h1>
+        <p class="site-sub">Lomiteria artesanal</p>
       </div>
     </div>
   </header>
 
-  <nav class="category-nav" id="navbar">
-    <ul>
-      <li><a href="#lomitos">Lomitos</a></li>
-      <li><a href="#papas">Papas</a></li>
-      <li><a href="#bebidas">Bebidas</a></li>
-      <li><a href="#postres">Postres</a></li>
-    </ul>
+  <!-- NAVBAR DE CATEGORIAS -->
+  <nav class="category-nav" id="navbar" aria-label="Categorias de la carta">
+    <a href="#lomitos" class="nav-card">
+      <span class="nav-card-icon">
+        <svg viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="20" width="40" height="10" rx="5" fill="#F5A623"/>
+          <rect x="4" y="14" width="40" height="8" rx="2" fill="#c0392b"/>
+          <rect x="4" y="10" width="40" height="6" rx="2" fill="#e8d5a3"/>
+          <ellipse cx="24" cy="8" rx="20" ry="7" fill="#F5A623"/>
+        </svg>
+      </span>
+      <span class="nav-card-label">Lomitos</span>
+    </a>
+    <a href="#papas" class="nav-card">
+      <span class="nav-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="8" width="6" height="32" rx="3" fill="#F5A623"/>
+          <rect x="20" y="4" width="6" height="36" rx="3" fill="#e8a020"/>
+          <rect x="30" y="8" width="6" height="32" rx="3" fill="#F5A623"/>
+          <rect x="40" y="12" width="6" height="24" rx="3" fill="#e8a020"/>
+          <rect x="2" y="12" width="6" height="24" rx="3" fill="#e8a020"/>
+        </svg>
+      </span>
+      <span class="nav-card-label">Papas</span>
+    </a>
+    <a href="#bebidas" class="nav-card">
+      <span class="nav-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="10" width="20" height="32" rx="4" fill="#F5A623" opacity="0.8"/>
+          <rect x="14" y="10" width="20" height="8" rx="2" fill="#e8a020"/>
+          <rect x="18" y="22" width="12" height="2" rx="1" fill="#FAF3E0" opacity="0.7"/>
+          <rect x="18" y="27" width="9" height="2" rx="1" fill="#FAF3E0" opacity="0.5"/>
+        </svg>
+      </span>
+      <span class="nav-card-label">Bebidas</span>
+    </a>
+    <a href="#postres" class="nav-card">
+      <span class="nav-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="24" cy="32" rx="18" ry="10" fill="#F5A623"/>
+          <ellipse cx="24" cy="20" rx="14" ry="8" fill="#e8d5a3"/>
+          <ellipse cx="24" cy="14" rx="10" ry="6" fill="#F5A623" opacity="0.7"/>
+          <rect x="22" y="4" width="4" height="12" rx="2" fill="#1A1A1A"/>
+        </svg>
+      </span>
+      <span class="nav-card-label">Postres</span>
+    </a>
   </nav>
 
+  <!-- MENU PRINCIPAL -->
   <main class="menu">
 
+    <!-- LOMITOS -->
     <section class="menu-section" id="lomitos">
-      <h2 class="section-title"><span class="section-icon">&#x1F969;</span> Lomitos</h2>
-      <p class="section-desc">Bife de lomo a la plancha, siempre tierno y jugoso.</p>
-      <ul class="item-list">
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Lomito Clasico</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$3.500</span>
+      <div class="section-header">
+        <h2 class="section-title">Lomitos</h2>
+        <p class="section-desc">Bife de lomo a la plancha, tierno y jugoso.</p>
+      </div>
+      <ul class="card-grid">
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/lomito-clasico.jpg" alt="Lomito Clasico" class="card-img" loading="lazy" />
           </div>
-          <p class="item-desc">Lomo, lechuga, tomate, huevo frito y mayonesa casera.</p>
-        </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Lomito Completo</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$4.200</span>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Lomito Clasico</h3>
+              <span class="card-price">$3.500</span>
+            </div>
+            <p class="card-desc">Lomo, lechuga, tomate, huevo frito y mayonesa casera.</p>
           </div>
-          <p class="item-desc">Lomo, jamon, queso, huevo, palta, panceta crocante y alioli.</p>
         </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Lomito BBQ</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$4.000</span>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/lomito-completo.jpg" alt="Lomito Completo" class="card-img" loading="lazy" />
           </div>
-          <p class="item-desc">Lomo, cebolla caramelizada, queso cheddar y salsa BBQ ahumada.</p>
-        </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Lomito Provenzal</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$3.800</span>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Lomito Completo</h3>
+              <span class="card-price">$4.200</span>
+            </div>
+            <p class="card-desc">Lomo, jamon, queso, huevo, palta, panceta crocante y alioli.</p>
           </div>
-          <p class="item-desc">Lomo al verdeo, provenzal casero, tomate asado y rucula fresca.</p>
         </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Lomito Pepis Especial</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$4.800</span>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/lomito-bbq.jpg" alt="Lomito BBQ" class="card-img" loading="lazy" />
           </div>
-          <p class="item-desc">La firma de la casa: lomo doble, queso fundido, panceta, ajo negro y salsa secreta Pepis.</p>
-          <span class="badge">Estrella de la carta</span>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Lomito BBQ</h3>
+              <span class="card-price">$4.000</span>
+            </div>
+            <p class="card-desc">Lomo, cebolla caramelizada, queso cheddar y salsa BBQ ahumada.</p>
+          </div>
         </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/lomito-provenzal.jpg" alt="Lomito Provenzal" class="card-img" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Lomito Provenzal</h3>
+              <span class="card-price">$3.800</span>
+            </div>
+            <p class="card-desc">Lomo al verdeo, provenzal casero, tomate asado y rucula fresca.</p>
+          </div>
+        </li>
+
+        <li class="product-card featured">
+          <div class="card-img-wrap">
+            <img src="img/lomito-especial.jpg" alt="Lomito Pepis Especial" class="card-img" loading="lazy" />
+            <span class="card-badge">Estrella de la carta</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Pepi's Especial</h3>
+              <span class="card-price">$4.800</span>
+            </div>
+            <p class="card-desc">Lomo doble, queso fundido, panceta, ajo negro y salsa secreta Pepi's.</p>
+          </div>
+        </li>
+
       </ul>
     </section>
 
+    <!-- PAPAS Y ACOMPAÑAMIENTOS -->
     <section class="menu-section" id="papas">
-      <h2 class="section-title"><span class="section-icon">&#x1F35F;</span> Papas y acompañamientos</h2>
-      <p class="section-desc">Para complementar tu lomito o picar entre amigos.</p>
-      <ul class="item-list">
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Papas Fritas Simples</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$1.500</span>
+      <div class="section-header">
+        <h2 class="section-title">Papas y acompañamientos</h2>
+        <p class="section-desc">Para complementar tu lomito o picar entre amigos.</p>
+      </div>
+      <ul class="card-grid">
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/papas-simples.jpg" alt="Papas Fritas Simples" class="card-img" loading="lazy" />
           </div>
-          <p class="item-desc">Papas cortadas en baston, doradas y crocantes. Con sal gruesa.</p>
-        </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Papas Rusticas</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$1.800</span>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Papas Fritas Simples</h3>
+              <span class="card-price">$1.500</span>
+            </div>
+            <p class="card-desc">Papas cortadas en baston, doradas y crocantes. Con sal gruesa.</p>
           </div>
-          <p class="item-desc">Con piel, condimentadas con ajo, pimenton y oregano.</p>
         </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Papas Pepis</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$2.200</span>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/papas-rusticas.jpg" alt="Papas Rusticas" class="card-img" loading="lazy" />
           </div>
-          <p class="item-desc">Papas fritas con queso cheddar derretido, panceta y ciboulette.</p>
-          <span class="badge">Las mas pedidas</span>
-        </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Ensalada de la Casa</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$1.400</span>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Papas Rusticas</h3>
+              <span class="card-price">$1.800</span>
+            </div>
+            <p class="card-desc">Con piel, condimentadas con ajo, pimenton y oregano.</p>
           </div>
-          <p class="item-desc">Lechuga, tomate cherry, zanahoria rallada y aderezo casero.</p>
         </li>
+
+        <li class="product-card featured">
+          <div class="card-img-wrap">
+            <img src="img/papas-pepis.jpg" alt="Papas Pepis" class="card-img" loading="lazy" />
+            <span class="card-badge">Las mas pedidas</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Papas Pepi's</h3>
+              <span class="card-price">$2.200</span>
+            </div>
+            <p class="card-desc">Papas fritas con queso cheddar derretido, panceta y ciboulette.</p>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/ensalada-casa.jpg" alt="Ensalada de la Casa" class="card-img" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Ensalada de la Casa</h3>
+              <span class="card-price">$1.400</span>
+            </div>
+            <p class="card-desc">Lechuga, tomate cherry, zanahoria rallada y aderezo casero.</p>
+          </div>
+        </li>
+
       </ul>
     </section>
 
+    <!-- BEBIDAS -->
     <section class="menu-section" id="bebidas">
-      <h2 class="section-title"><span class="section-icon">&#x1F964;</span> Bebidas</h2>
-      <p class="section-desc">Bien frias, para acompañar.</p>
-      <ul class="item-list">
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Gaseosa (lata)</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$900</span>
+      <div class="section-header">
+        <h2 class="section-title">Bebidas</h2>
+        <p class="section-desc">Bien frias, para acompanar.</p>
+      </div>
+      <ul class="card-grid">
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/gaseosa.jpg" alt="Gaseosa en lata" class="card-img" loading="lazy" />
           </div>
-          <p class="item-desc">Coca-Cola, Sprite o Fanta. A eleccion.</p>
-        </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Agua Mineral</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$700</span>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Gaseosa (lata)</h3>
+              <span class="card-price">$900</span>
+            </div>
+            <p class="card-desc">Coca-Cola, Sprite o Fanta. A eleccion.</p>
           </div>
-          <p class="item-desc">500 ml, con o sin gas.</p>
         </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Limonada Casera</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$1.200</span>
+
+        <li class="product-card">
+          <div class="card-img-wrap placeholder-img" aria-label="Agua Mineral">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="80" fill="#d0e8f0"/>
+              <ellipse cx="60" cy="30" rx="14" ry="22" fill="#7ac4e0" opacity="0.7"/>
+              <ellipse cx="60" cy="15" rx="8" ry="5" fill="#a8d8ea"/>
+              <path d="M50 40 Q60 55 70 40" stroke="#7ac4e0" stroke-width="2" fill="none"/>
+              <text x="60" y="68" text-anchor="middle" font-size="9" fill="#2a7fa8" font-family="Georgia,serif">Agua Mineral</text>
+            </svg>
           </div>
-          <p class="item-desc">Limon exprimido, menta fresca y un toque de azucar. Tamano grande.</p>
-          <span class="badge">Recomendada</span>
-        </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Cerveza Artesanal</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$1.800</span>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Agua Mineral</h3>
+              <span class="card-price">$700</span>
+            </div>
+            <p class="card-desc">500 ml, con o sin gas.</p>
           </div>
-          <p class="item-desc">Rubia estilo Lager, tirada, 500 ml. Fria y espumosa.</p>
         </li>
+
+        <li class="product-card featured">
+          <div class="card-img-wrap">
+            <img src="img/limonada.jpg" alt="Limonada Casera" class="card-img" loading="lazy" />
+            <span class="card-badge">Recomendada</span>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Limonada Casera</h3>
+              <span class="card-price">$1.200</span>
+            </div>
+            <p class="card-desc">Limon exprimido, menta fresca y un toque de azucar. Tamano grande.</p>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/cerveza.jpg" alt="Cerveza Artesanal" class="card-img" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Cerveza Artesanal</h3>
+              <span class="card-price">$1.800</span>
+            </div>
+            <p class="card-desc">Rubia estilo Lager, tirada, 500 ml. Fria y espumosa.</p>
+          </div>
+        </li>
+
       </ul>
     </section>
 
+    <!-- POSTRES -->
     <section class="menu-section" id="postres">
-      <h2 class="section-title"><span class="section-icon">&#x1F36E;</span> Postres</h2>
-      <p class="section-desc">El final perfecto para una buena comida.</p>
-      <ul class="item-list">
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Flan Casero</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$1.100</span>
+      <div class="section-header">
+        <h2 class="section-title">Postres</h2>
+        <p class="section-desc">El final perfecto para una buena comida.</p>
+      </div>
+      <ul class="card-grid">
+
+        <li class="product-card">
+          <div class="card-img-wrap placeholder-img" aria-label="Flan Casero">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="80" fill="#fdf0d5"/>
+              <ellipse cx="60" cy="48" rx="30" ry="16" fill="#c8860a" opacity="0.6"/>
+              <ellipse cx="60" cy="38" rx="24" ry="18" fill="#e8a020"/>
+              <ellipse cx="60" cy="26" rx="18" ry="12" fill="#f5c842"/>
+              <text x="60" y="72" text-anchor="middle" font-size="9" fill="#8B5E00" font-family="Georgia,serif">Flan Casero</text>
+            </svg>
           </div>
-          <p class="item-desc">Flan de huevo con crema o dulce de leche. Receta de la abuela.</p>
-        </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Brownie con Helado</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$1.500</span>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Flan Casero</h3>
+              <span class="card-price">$1.100</span>
+            </div>
+            <p class="card-desc">Flan de huevo con crema o dulce de leche. Receta de la abuela.</p>
           </div>
-          <p class="item-desc">Brownie de chocolate tibio, bola de helado de vainilla y salsa de chocolate.</p>
-          <span class="badge">El favorito</span>
         </li>
-        <li class="menu-item">
-          <div class="item-header">
-            <span class="item-name">Tiramisu de la Casa</span>
-            <span class="item-dots"></span>
-            <span class="item-price">$1.400</span>
+
+        <li class="product-card featured">
+          <div class="card-img-wrap placeholder-img" aria-label="Brownie con Helado">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="80" fill="#2d1b0e"/>
+              <rect x="20" y="30" width="80" height="35" rx="5" fill="#5c3310"/>
+              <ellipse cx="60" cy="28" rx="22" ry="16" fill="#f5f0e8"/>
+              <path d="M48 20 Q60 10 72 20" stroke="#c8860a" stroke-width="3" fill="none"/>
+              <span class="card-badge">El favorito</span>
+              <text x="60" y="72" text-anchor="middle" font-size="9" fill="#f5c842" font-family="Georgia,serif">Brownie + Helado</text>
+            </svg>
           </div>
-          <p class="item-desc">Clasico italiano con cafe, mascarpone y cacao amargo. Porcion generosa.</p>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Brownie con Helado</h3>
+              <span class="card-price">$1.500</span>
+            </div>
+            <p class="card-desc">Brownie de chocolate tibio, bola de helado de vainilla y salsa de chocolate.</p>
+          </div>
         </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap placeholder-img" aria-label="Tiramisu de la Casa">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="80" fill="#f5efe0"/>
+              <rect x="15" y="40" width="90" height="28" rx="4" fill="#c8a06a"/>
+              <rect x="15" y="28" width="90" height="14" rx="2" fill="#f0e8d0"/>
+              <rect x="15" y="18" width="90" height="12" rx="2" fill="#c8a06a"/>
+              <rect x="15" y="10" width="90" height="10" rx="4" fill="#8B5E00" opacity="0.4"/>
+              <text x="60" y="74" text-anchor="middle" font-size="9" fill="#5a3a1a" font-family="Georgia,serif">Tiramisu</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Tiramisu de la Casa</h3>
+              <span class="card-price">$1.400</span>
+            </div>
+            <p class="card-desc">Clasico italiano con cafe, mascarpone y cacao amargo. Porcion generosa.</p>
+          </div>
+        </li>
+
       </ul>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer" id="contacto">
     <div class="footer-inner">
-      <img src="logo.png" alt="Pepis Lomos" class="footer-logo" />
-      <div class="footer-block">
-        <h3 class="footer-heading">Horarios</h3>
-        <p>Lunes a Viernes: <strong>12:00 - 15:30 | 19:00 - 23:30</strong></p>
-        <p>Sabados y Domingos: <strong>12:00 - 00:00</strong></p>
+      <img src="logo.png" alt="Pepi's Lomos" class="footer-logo" />
+      <div class="footer-grid">
+        <div class="footer-block">
+          <h3 class="footer-heading">Horarios</h3>
+          <p>Lunes a Viernes</p>
+          <p><strong>12:00 - 15:30 | 19:00 - 23:30</strong></p>
+          <p>Sabados y Domingos</p>
+          <p><strong>12:00 - 00:00</strong></p>
+        </div>
+        <div class="footer-block">
+          <h3 class="footer-heading">Donde estamos</h3>
+          <p>Av. San Martin 1234, Local 2</p>
+          <p>Ciudad Ejemplo, Argentina</p>
+        </div>
+        <div class="footer-block">
+          <h3 class="footer-heading">Seguinos en Instagram</h3>
+          <a href="https://www.instagram.com/pepis.lomos" target="_blank" rel="noopener noreferrer" class="ig-link" aria-label="Instagram de Pepi's Lomos">
+            <svg class="ig-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.851s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.516 2.497 5.783 2.226 7.15 2.163 8.416 2.105 8.796 2.163 12 2.163zm0-2.163c-3.259 0-3.667.014-4.947.072C5.71.163 4.204.53 2.969 1.757 1.743 2.984 1.376 4.49 1.304 5.83.246 7.109.232 7.518.232 12s.014 4.891.072 6.17c.072 1.34.439 2.847 1.666 4.073 1.226 1.226 2.732 1.594 4.072 1.666C7.34 23.986 7.748 24 12 24s4.66-.014 5.939-.072c1.34-.072 2.847-.44 4.073-1.666 1.226-1.226 1.594-2.732 1.666-4.073.058-1.279.072-1.688.072-6.17s-.014-4.891-.072-6.17c-.072-1.34-.44-2.847-1.666-4.073C21.786.53 20.28.163 18.94.09 17.66.032 17.252 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+            @pepis.lomos
+          </a>
+        </div>
       </div>
-      <div class="footer-block">
-        <h3 class="footer-heading">Donde estamos</h3>
-        <p>Av. San Martin 1234, Local 2<br />Ciudad Ejemplo, Argentina</p>
-      </div>
-      <div class="footer-block">
-        <h3 class="footer-heading">Seguinos</h3>
-        <a href="https://www.instagram.com/pepis.lomos" target="_blank" rel="noopener noreferrer" class="ig-link" aria-label="Instagram de Pepis Lomos">
-          <svg class="ig-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.851s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.516 2.497 5.783 2.226 7.15 2.163 8.416 2.105 8.796 2.163 12 2.163zm0-2.163c-3.259 0-3.667.014-4.947.072C5.71.163 4.204.53 2.969 1.757 1.743 2.984 1.376 4.49 1.304 5.83.246 7.109.232 7.518.232 12s.014 4.891.072 6.17c.072 1.34.439 2.847 1.666 4.073 1.226 1.226 2.732 1.594 4.072 1.666C7.34 23.986 7.748 24 12 24s4.66-.014 5.939-.072c1.34-.072 2.847-.44 4.073-1.666 1.226-1.226 1.594-2.732 1.666-4.073.058-1.279.072-1.688.072-6.17s-.014-4.891-.072-6.17c-.072-1.34-.44-2.847-1.666-4.073C21.786.53 20.28.163 18.94.09 17.66.032 17.252 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-          </svg>
-          @pepis.lomos
-        </a>
-      </div>
-      <p class="footer-copy">2026 Pepis Lomos - Todos los derechos reservados.</p>
+      <p class="footer-copy">2026 Pepi's Lomos — Todos los derechos reservados.</p>
     </div>
   </footer>
 
