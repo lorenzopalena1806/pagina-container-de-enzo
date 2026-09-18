@@ -27,21 +27,37 @@
     });
   });
 
+  
   function setActiveLink() {
     var navH = navbar ? navbar.offsetHeight : 0;
     var current = '';
+    var minDistance = Infinity;
+    var scrollPosition = window.scrollY + navH + 150; // Punto de lectura un poco mas abajo del navbar
+
     sections.forEach(function (sec) {
-      if (window.pageYOffset >= sec.offsetTop - navH - 32) {
+      var sectionTop = sec.offsetTop;
+      var sectionBottom = sectionTop + sec.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
         current = sec.getAttribute('id');
       }
     });
+
+    // Si llegamos al fondo exacto, forzar el ultimo elemento (Postres)
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 20) {
+      current = sections[sections.length - 1].getAttribute('id');
+    }
+
     navLinks.forEach(function (link) {
       link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
+      if (current && link.getAttribute('href') === '#' + current) {
         link.classList.add('active');
+        // Opcional: hacer scroll horizontal del navbar si el item activo queda oculto en celulares
+        link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
     });
   }
+
 
   window.addEventListener('scroll', setActiveLink, { passive: true });
   setActiveLink();
@@ -135,3 +151,4 @@
   });
 
 })();
+
