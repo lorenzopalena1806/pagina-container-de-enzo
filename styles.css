@@ -278,7 +278,7 @@ ul { list-style: none; }
 
 /* ─── DESCRIPCION EXPANDIBLE ─── */
 .card-desc {
-  font-size: 1.25rem;
+  font-size: 1.12rem;
   color: #4a3b1e;
   font-style: italic;
   line-height: 1.45;
@@ -459,3 +459,4 @@ ul { list-style: none; }
   object-fit: contain;
   padding: 1.5rem; /* Margen para que la botella respire y no toque los bordes */
 }
+
