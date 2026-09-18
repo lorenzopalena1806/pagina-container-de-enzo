@@ -7,12 +7,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: 'Amatic SC', cursive;
   background-color: #FAF3E0;
   /* Textura de madera suave transparente con SVG inline arreglado */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='wood'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.2' numOctaves='3' result='noise'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.72 0 0 0 0 0.52 0 0 0 0 0.04 0 0 0 0.08 0' in='noise'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23wood)'/%3E%3C/svg%3E");
   color: #1A1A1A;
-  line-height: 1.6;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -44,14 +46,14 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 .site-title {
-  font-size: 1.8rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: #F5A623;
   text-shadow: 2px 2px 0 #000;
   line-height: 1.1;
 }
 .site-sub {
-  font-size: 0.82rem;
+  font-size: 1.25rem;
   font-style: italic;
   color: #c8a84b;
   letter-spacing: 0.08em;
@@ -107,12 +109,12 @@ ul { list-style: none; }
 .nav-card-icon svg { width: 100%; height: 100%; }
 
 .nav-card-label {
-  font-size: 0.72rem;
+  font-size: 1.15rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #F5A623;
-  font-family: 'Georgia', serif;
+  font-family: 'Amatic SC', cursive;
   white-space: nowrap;
   transition: color 0.2s;
 }
@@ -134,7 +136,7 @@ ul { list-style: none; }
 .section-header { margin-bottom: 1.25rem; }
 
 .section-title {
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -144,7 +146,7 @@ ul { list-style: none; }
   line-height: 1.2;
 }
 .section-desc {
-  font-size: 0.85rem;
+  font-size: 1.3rem;
   font-style: italic;
   color: #6b5a2e;
   margin-top: 0.3rem;
@@ -234,14 +236,14 @@ ul { list-style: none; }
   left: 0.55rem;
   background-color: #F5A623;
   color: #1A1A1A;
-  font-size: 0.68rem;
+  font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   padding: 0.2rem 0.5rem;
   border-radius: 3px;
   border: 1.5px solid #1A1A1A;
-  font-family: 'Georgia', serif;
+  font-family: 'Amatic SC', cursive;
 }
 
 /* Cuerpo de la card */
@@ -259,24 +261,24 @@ ul { list-style: none; }
   gap: 0.5rem;
 }
 .card-name {
-  font-size: 0.98rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #1A1A1A;
   line-height: 1.2;
-  font-family: 'Georgia', serif;
+  font-family: 'Amatic SC', cursive;
 }
 .card-price {
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #B8860B;
   white-space: nowrap;
   flex-shrink: 0;
-  font-family: 'Georgia', serif;
+  font-family: 'Amatic SC', cursive;
 }
 
 /* ─── DESCRIPCION EXPANDIBLE ─── */
 .card-desc {
-  font-size: 0.82rem;
+  font-size: 1.25rem;
   color: #4a3b1e;
   font-style: italic;
   line-height: 1.45;
@@ -298,8 +300,8 @@ ul { list-style: none; }
   background: none;
   border: none;
   padding: 0;
-  font-family: 'Georgia', serif;
-  font-size: 0.75rem;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #B8860B;
   cursor: pointer;
@@ -386,18 +388,18 @@ ul { list-style: none; }
   .footer-inner { text-align: left; align-items: flex-start; }
 }
 .footer-heading {
-  font-size: 0.85rem;
+  font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #F5A623;
   margin-bottom: 0.6rem;
-  font-family: 'Georgia', serif;
+  font-family: 'Amatic SC', cursive;
   border-bottom: 1px solid rgba(245,166,35,0.3);
   padding-bottom: 0.3rem;
 }
 .footer-block p {
-  font-size: 0.87rem;
+  font-size: 1.25rem;
   color: #c8b07a;
   line-height: 1.7;
 }
@@ -410,13 +412,13 @@ ul { list-style: none; }
   background-color: #F5A623;
   color: #1A1A1A;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   padding: 0.55rem 1.1rem;
   border-radius: 4px;
   border: 2px solid #F5A623;
   margin-top: 0.4rem;
   transition: background 0.2s, color 0.2s;
-  font-family: 'Georgia', serif;
+  font-family: 'Amatic SC', cursive;
 }
 .ig-link:hover, .ig-link:focus {
   background-color: transparent;
@@ -426,7 +428,7 @@ ul { list-style: none; }
 .ig-icon { width: 18px; height: 18px; flex-shrink: 0; }
 
 .footer-copy {
-  font-size: 0.73rem;
+  font-size: 1.1rem;
   color: #5a4a2a;
   border-top: 1px solid #2e2e2e;
   padding-top: 1rem;
@@ -443,102 +445,4 @@ ul { list-style: none; }
 
 
 
-/* ================================================
-   TIPOGRAFIAS POR SECCION (Google Fonts)
-   Lomitos   → Bebas Neue      (condensada, impacto maximo)
-   Papas     → Fjalla One      (gruesa, solida)
-   Bebidas   → Yanone Kaffeesatz (condensada, fresca)
-   Postres   → Dosis ExtraBold  (redondeada, calida)
-   ================================================ */
 
-/* LOMITOS — Bebas Neue */
-#lomitos .card-name {
-  font-family: 'Bebas Neue', 'Georgia', serif;
-  font-size: 1.18rem;
-  letter-spacing: 0.06em;
-  line-height: 1.1;
-}
-#lomitos .card-price {
-  font-family: 'Bebas Neue', 'Georgia', serif;
-  font-size: 1.15rem;
-  letter-spacing: 0.04em;
-}
-#lomitos .section-title {
-  font-family: 'Bebas Neue', 'Georgia', serif;
-  font-size: 1.75rem;
-  letter-spacing: 0.1em;
-}
-
-/* PAPAS — Fjalla One */
-#papas .card-name {
-  font-family: 'Fjalla One', 'Georgia', serif;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-}
-#papas .card-price {
-  font-family: 'Fjalla One', 'Georgia', serif;
-  font-size: 1.08rem;
-}
-#papas .section-title {
-  font-family: 'Fjalla One', 'Georgia', serif;
-  font-size: 1.65rem;
-  letter-spacing: 0.05em;
-}
-
-/* BEBIDAS — Yanone Kaffeesatz Bold */
-#bebidas .card-name {
-  font-family: 'Yanone Kaffeesatz', 'Georgia', serif;
-  font-size: 1.12rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  line-height: 1.15;
-}
-#bebidas .card-price {
-  font-family: 'Yanone Kaffeesatz', 'Georgia', serif;
-  font-size: 1.12rem;
-  font-weight: 700;
-}
-#bebidas .section-title {
-  font-family: 'Yanone Kaffeesatz', 'Georgia', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-}
-
-/* POSTRES — Dosis ExtraBold */
-#postres .card-name {
-  font-family: 'Dosis', 'Georgia', serif;
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-}
-#postres .card-price {
-  font-family: 'Dosis', 'Georgia', serif;
-  font-weight: 800;
-  font-size: 1.08rem;
-}
-#postres .section-title {
-  font-family: 'Dosis', 'Georgia', serif;
-  font-weight: 800;
-  font-size: 1.65rem;
-  letter-spacing: 0.04em;
-}
-
-
-
-
-
-/* ================================================
-   AJUSTE DE IMAGENES PARA BEBIDAS
-   Botellas y latas son verticales, no deben cortarse
-   ================================================ */
-#bebidas .card-img-wrap {
-  background-color: #ffffff; /* Fondo blanco limpio para productos de catalogo */
-}
-
-#bebidas .card-img {
-  object-fit: contain;
-  padding: 1.5rem; /* Margen para que la botella respire y no toque los bordes */
-}
