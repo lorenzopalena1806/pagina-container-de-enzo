@@ -446,3 +446,16 @@ ul { list-style: none; }
 
 
 
+
+/* ================================================
+   AJUSTE DE IMAGENES PARA BEBIDAS
+   Botellas y latas son verticales, no deben cortarse
+   ================================================ */
+#bebidas .card-img-wrap {
+  background-color: #ffffff; /* Fondo blanco limpio para productos de catalogo */
+}
+
+#bebidas .card-img {
+  object-fit: contain;
+  padding: 1.5rem; /* Margen para que la botella respire y no toque los bordes */
+}
