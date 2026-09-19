@@ -261,11 +261,11 @@ ul { list-style: none; }
   gap: 0.5rem;
 }
 .card-name {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: #1A1A1A;
   line-height: 1.2;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .card-price {
   font-size: 1.6rem;
@@ -460,5 +460,6 @@ ul { list-style: none; }
   object-fit: contain;
   padding: 1.5rem; /* Margen para que la botella respire y no toque los bordes */
 }
+
 
 
