@@ -278,9 +278,10 @@ ul { list-style: none; }
 
 /* ─── DESCRIPCION EXPANDIBLE ─── */
 .card-desc {
-  font-size: 1.12rem;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
   color: #4a3b1e;
-  font-style: italic;
   line-height: 1.45;
   /* Truncado por defecto: 2 lineas */
   display: -webkit-box;
@@ -459,4 +460,5 @@ ul { list-style: none; }
   object-fit: contain;
   padding: 1.5rem; /* Margen para que la botella respire y no toque los bordes */
 }
+
 
