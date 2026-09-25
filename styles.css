@@ -236,11 +236,11 @@ ul { list-style: none; }
   left: 0.4rem;
   background-color: #F5A623;
   color: #1A1A1A;
-  font-size: 0.72rem;
+  font-size: 0.94rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.15rem 0.35rem;
+  padding: 0.2rem 0.45rem;
   border-radius: 3px;
   border: 1.5px solid #1A1A1A;
   font-family: 'Yanone Kaffeesatz', sans-serif;
