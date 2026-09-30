@@ -151,26 +151,32 @@
   });
 
 
-  /* ─── 5. DISPONIBILIDAD DINÁMICA (GOOGLE SHEETS) ─── */
-  
+    /* ─── 5. DISPONIBILIDAD DINÁMICA (TIEMPO REAL) ─── */
   function normalizeText(text) {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
   }
 
   async function checkAvailability() {
     try {
-      var csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRHUGBsDuMlTuCI9fhTh5jd533YFbyOj09iwpp7tIV3xOMg_dr3xx2UoiXQqtQfpGsBuPWh2zqc5XQS/pub?output=csv';
-      var response = await fetch(csvUrl + '?t=' + new Date().getTime()); // Evitar cache del navegador
+      // Usamos la API secreta de visualización de Google (Actualización instantánea)
+      var sheetId = '1LCzGYdX2eotTGaNi-FhF_yO5cY3ZG2btiQmL8yVmqfc';
+      var url = 'https://docs.google.com/spreadsheets/d/' + sheetId + '/gviz/tq?tqx=out:json&t=' + new Date().getTime();
+      
+      var response = await fetch(url);
       var text = await response.text();
       
-      var rows = text.split('\n');
+      // Limpiamos el texto para convertirlo en JSON puro
+      var jsonString = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
+      var data = JSON.parse(jsonString);
+      
       var availability = {};
       
+      var rows = data.table.rows;
       for (var i = 1; i < rows.length; i++) {
-        var columns = rows[i].split(',');
-        if (columns.length >= 3) {
-          var productName = normalizeText(columns[1]);
-          var isAvailable = columns[2].trim().toUpperCase();
+        var row = rows[i].c;
+        if (row && row.length >= 3 && row[1] && row[2]) {
+          var productName = normalizeText(row[1].v || "");
+          var isAvailable = (row[2].v || "").toString().trim().toUpperCase();
           availability[productName] = isAvailable;
         }
       }
@@ -183,20 +189,16 @@
           if (availability[nameText] === 'NO') {
             card.classList.add('agotado-estado');
           } else {
-            card.classList.remove('agotado-estado'); 
+            card.classList.remove('agotado-estado');
           }
         }
       });
       
     } catch (error) {
-      console.error('Error cargando disponibilidad:', error);
+      console.error('Error cargando disponibilidad en tiempo real:', error);
     }
   }
 
   checkAvailability();
-  setInterval(checkAvailability, 60000); // Revisa el Excel cada 1 minuto
-
+  setInterval(checkAvailability, 10000); // Revisa cada 10 segundos!
 })();
-
-
-
