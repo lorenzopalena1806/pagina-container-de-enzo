@@ -150,5 +150,52 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+
+  /* ─── 5. DISPONIBILIDAD DINÁMICA (GOOGLE SHEETS) ─── */
+  
+  function normalizeText(text) {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  }
+
+  async function checkAvailability() {
+    try {
+      var csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRHUGBsDuMlTuCI9fhTh5jd533YFbyOj09iwpp7tIV3xOMg_dr3xx2UoiXQqtQfpGsBuPWh2zqc5XQS/pub?output=csv';
+      var response = await fetch(csvUrl + '?t=' + new Date().getTime()); // Evitar cache del navegador
+      var text = await response.text();
+      
+      var rows = text.split('\n');
+      var availability = {};
+      
+      for (var i = 1; i < rows.length; i++) {
+        var columns = rows[i].split(',');
+        if (columns.length >= 3) {
+          var productName = normalizeText(columns[1]);
+          var isAvailable = columns[2].trim().toUpperCase();
+          availability[productName] = isAvailable;
+        }
+      }
+      
+      var productCards = document.querySelectorAll('.product-card');
+      productCards.forEach(function (card) {
+        var nameEl = card.querySelector('.card-name');
+        if (nameEl) {
+          var nameText = normalizeText(nameEl.textContent);
+          if (availability[nameText] === 'NO') {
+            card.style.display = 'none';
+          } else {
+            card.style.display = ''; 
+          }
+        }
+      });
+      
+    } catch (error) {
+      console.error('Error cargando disponibilidad:', error);
+    }
+  }
+
+  checkAvailability();
+  setInterval(checkAvailability, 60000); // Revisa el Excel cada 1 minuto
+
 })();
+
 
