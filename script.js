@@ -181,9 +181,9 @@
         if (nameEl) {
           var nameText = normalizeText(nameEl.textContent);
           if (availability[nameText] === 'NO') {
-            card.style.display = 'none';
+            card.classList.add('agotado-estado');
           } else {
-            card.style.display = ''; 
+            card.classList.remove('agotado-estado'); 
           }
         }
       });
@@ -197,5 +197,6 @@
   setInterval(checkAvailability, 60000); // Revisa el Excel cada 1 minuto
 
 })();
+
 
 
