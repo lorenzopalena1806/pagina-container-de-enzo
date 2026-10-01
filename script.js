@@ -187,16 +187,9 @@
         if (nameEl) {
           var nameText = normalizeText(nameEl.textContent);
           if (availability[nameText] === 'NO') {
-            // Si está dentro de Promociones, lo ocultamos por completo. Si es producto normal, cartel de AGOTADO.
-            if (card.closest('#promociones')) {
-              card.style.display = 'none';
-            } else {
-              card.classList.add('agotado-estado');
-              card.style.display = '';
-            }
+            card.classList.add('agotado-estado');
           } else {
             card.classList.remove('agotado-estado');
-            card.style.display = '';
           }
         }
       });
@@ -209,4 +202,3 @@
   checkAvailability();
   setInterval(checkAvailability, 10000); // Revisa cada 10 segundos!
 })();
-
