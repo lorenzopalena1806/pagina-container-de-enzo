@@ -1,4 +1,4 @@
-﻿/* ================================================
+/* ================================================
    PEPI'S LOMOS — script.js  (v3)
    1. Scroll suave + nav activo
    2. Animaciones de entrada (Intersection Observer)
@@ -187,9 +187,15 @@
         if (nameEl) {
           var nameText = normalizeText(nameEl.textContent);
           if (availability[nameText] === 'NO') {
-            card.classList.add('agotado-estado');
+            if (card.closest('#promociones')) {
+              card.style.display = 'none';
+            } else {
+              card.classList.add('agotado-estado');
+              card.style.display = '';
+            }
           } else {
             card.classList.remove('agotado-estado');
+            card.style.display = '';
           }
         }
       });
