@@ -273,7 +273,7 @@ ul { list-style: none; }
   color: #B8860B;
   white-space: nowrap;
   flex-shrink: 0;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .price-unit {
   font-size: 0.6em;
