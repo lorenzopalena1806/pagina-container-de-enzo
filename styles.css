@@ -1,4 +1,4 @@
-﻿/* ================================================
+/* ================================================
    PEPI'S LOMOS â€” styles.css  (v3)
    Paleta: naranja dorado #F5A623, negro #1A1A1A,
            crema calida #FAF3E0, acento #B8860B
@@ -268,12 +268,16 @@ ul { list-style: none; }
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .card-price {
-  font-size: 1.6rem;
+  font-size: 2.08rem;
   font-weight: 700;
   color: #B8860B;
   white-space: nowrap;
   flex-shrink: 0;
   font-family: 'Amatic SC', cursive;
+}
+.price-unit {
+  font-size: 0.6em;
+  margin-left: 0.15em;
 }
 
 /* â”€â”€â”€ DESCRIPCION EXPANDIBLE â”€â”€â”€ */
@@ -452,11 +456,13 @@ ul { list-style: none; }
    AJUSTE DE IMAGENES PARA BEBIDAS
    Botellas y latas son verticales, no deben cortarse
    ================================================ */
-#bebidas .card-img-wrap {
+#bebidas .card-img-wrap,
+#helados .card-img-wrap {
   background-color: #ffffff; /* Fondo blanco limpio para productos de catalogo */
 }
 
-#bebidas .card-img {
+#bebidas .card-img,
+#helados .card-img {
   object-fit: contain;
   padding: 1.5rem; /* Margen para que la botella respire y no toque los bordes */
 }

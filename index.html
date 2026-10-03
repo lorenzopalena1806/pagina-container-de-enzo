@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Yanone+Kaffeesatz:wght@400;700&display=swap" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
 
@@ -91,6 +91,18 @@
 </span>
       <span class="nav-card-label">Bebidas</span>
     </a>
+    <a href="#helados" class="nav-card">
+      <span class="nav-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="21" y="32" width="6" height="13" rx="3" fill="#e8d5a3"/>
+          <path d="M13 12 C13 4, 35 4, 35 12 L35 31 C35 33.5, 33 35, 30.5 35 L17.5 35 C15 35, 13 33.5, 13 31 Z" fill="#8b5a2b"/>
+          <path d="M28 4.6 C33 5.5, 35 8, 35 12 L35 15 C32 15, 29 12.5, 29.5 9 C27.5 8.5, 27 6, 28 4.6 Z" fill="#FAF3E0"/>
+          <path d="M13 22 C16 25, 19 20, 22 23 C25 26, 28 21, 31 24 C33 25.5, 34.5 24, 35 23" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M17 11 L17 18" stroke="#c49a6c" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="nav-card-label">Helados</span>
+    </a>
     
   </nav>
 
@@ -104,30 +116,56 @@
         <p class="section-desc">Aprovechá nuestros combos por tiempo limitado.</p>
       </div>
       <ul class="card-grid">
-        <li class="product-card featured">
+
+        <li class="product-card">
           <div class="card-img-wrap">
-            <img src="img/lomo-clasico.jpg" alt="Promo Pareja" class="card-img" loading="lazy" width="600" height="400" />
-            <span class="card-badge">20% OFF</span>
+            <img src="img/lomo-clasico.jpg" alt="2 Lomos Clásicos + Papas" class="card-img" loading="lazy" width="600" height="400" />
           </div>
           <div class="card-body">
             <div class="card-header-row">
-              <h3 class="card-name">Promo Pareja</h3>
-              <span class="card-price">$35.000</span>
+              <h3 class="card-name">2 Lomos Clásicos + Papas</h3>
+              <span class="card-price">$17.000 <small class="price-unit">c/u</small></span>
             </div>
-            <p class="card-desc">Ideal para compartir. Incluye 2 Lomos Clásicos con sus porciones de papas + 2 Latas de Pepsi a elección.</p>
+            <p class="card-desc">2 Lomos Clásicos, cada uno con su porción de papas bastón.</p>
           </div>
         </li>
-        <li class="product-card featured">
+
+        <li class="product-card">
           <div class="card-img-wrap">
-            <img src="img/lomo-maky.jpg" alt="Promo Juntada" class="card-img" loading="lazy" width="600" height="400" />
-            <span class="card-badge">Combo 4x3</span>
+            <img src="img/lomo-clasico.jpg" alt="4 Lomos Clásicos + Papas" class="card-img" loading="lazy" width="600" height="400" />
           </div>
           <div class="card-body">
             <div class="card-header-row">
-              <h3 class="card-name">Promo Juntada</h3>
-              <span class="card-price">$63.000</span>
+              <h3 class="card-name">4 Lomos Clásicos + Papas</h3>
+              <span class="card-price">$15.000 <small class="price-unit">c/u</small></span>
             </div>
-            <p class="card-desc">Llevate 4 Lomos Maky al precio de 3. Incluye 4 porciones de papas rústicas.</p>
+            <p class="card-desc">4 Lomos Clásicos, cada uno con su porción de papas bastón.</p>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/lomo-clasico.jpg" alt="2 Pizzas" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">2 Pizzas</h3>
+              <span class="card-price">$12.000 <small class="price-unit">c/u</small></span>
+            </div>
+            <p class="card-desc">2 Pizzas Margarita de masa madre, de 4 porciones cada una.</p>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/lomo-clasico.jpg" alt="1 Pizza + 2 Lomos Clásicos" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">1 Pizza + 2 Lomos Clásicos</h3>
+              <span class="card-price">$44.000</span>
+            </div>
+            <p class="card-desc">1 Pizza Margarita de masa madre + 2 Lomos Clásicos con papas bastón.</p>
           </div>
         </li>
       </ul>
@@ -316,7 +354,7 @@
           <div class="card-body">
             <div class="card-header-row">
               <h3 class="card-name">Lata de Pepsi Común</h3>
-              <span class="card-price">$2.500</span>
+              <span class="card-price">$3.000</span>
             </div>
             <p class="card-desc">Lata de 354ml.</p>
           </div>
@@ -329,35 +367,9 @@
           <div class="card-body">
             <div class="card-header-row">
               <h3 class="card-name">Lata de Pepsi Black</h3>
-              <span class="card-price">$2.500</span>
+              <span class="card-price">$3.000</span>
             </div>
             <p class="card-desc">Lata de 354ml. Sin azúcar.</p>
-          </div>
-        </li>
-
-        <li class="product-card">
-          <div class="card-img-wrap">
-            <img src="img/pepsi-botella-comun.png" alt="Pepsi Común 500ml" class="card-img" loading="lazy" width="600" height="400" />
-          </div>
-          <div class="card-body">
-            <div class="card-header-row">
-              <h3 class="card-name">Pepsi Común (500ml)</h3>
-              <span class="card-price">$4.000</span>
-            </div>
-            <p class="card-desc">Botella de 500ml.</p>
-          </div>
-        </li>
-
-        <li class="product-card">
-          <div class="card-img-wrap">
-            <img src="img/pepsi-botella-black.png" alt="Pepsi Black 500ml" class="card-img" loading="lazy" width="600" height="400" />
-          </div>
-          <div class="card-body">
-            <div class="card-header-row">
-              <h3 class="card-name">Pepsi Black (500ml)</h3>
-              <span class="card-price">$4.000</span>
-            </div>
-            <p class="card-desc">Botella de 500ml. Sin azúcar.</p>
           </div>
         </li>
 
@@ -371,6 +383,43 @@
               <span class="card-price">$4.000</span>
             </div>
             <p class="card-desc">Botella de 500ml.</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- HELADOS -->
+    <section class="menu-section" id="helados">
+      <div class="section-header">
+        <h2 class="section-title">Helados</h2>
+        <p class="section-desc">El cierre perfecto, bien helado.</p>
+      </div>
+      <ul class="card-grid">
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/helado-bombon.png" alt="Helado palito bombón" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Palito Bombón</h3>
+              <span class="card-price">$3.000</span>
+            </div>
+            <p class="card-desc">Helado de crema bañado en chocolate.</p>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/helado-agua.png" alt="Palito de agua" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Palito de Agua</h3>
+              <span class="card-price">$3.000</span>
+            </div>
+            <p class="card-desc">Helado de agua sabor frutilla.</p>
           </div>
         </li>
 
