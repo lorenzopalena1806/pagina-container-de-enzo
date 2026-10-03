@@ -230,6 +230,33 @@
   }
 
   checkAvailability();
-  setInterval(checkAvailability, 10000); // Revisa cada 10 segundos!
-})();
+  setInterval(function() { checkAvailability(); updatePromoVisibility(); }, 10000); // Revisa cada 10 segundos!
 
+  /* ─── 6. HORARIO DE PROMOS (LUN 8 AM a VIE 1 AM) ─── */
+  function updatePromoVisibility() {
+    var d = new Date();
+    var day = d.getDay(); // 0=Dom, 1=Lun, ..., 5=Vie, 6=Sab
+    var hour = d.getHours(); // 0 a 23
+
+    var isPromoOff = false;
+    if (day === 5 && hour >= 1) isPromoOff = true; // Viernes desde 01:00 AM
+    if (day === 6) isPromoOff = true;              // Sábado todo el día
+    if (day === 0) isPromoOff = true;              // Domingo todo el día
+    if (day === 1 && hour < 8) isPromoOff = true;  // Lunes antes de las 08:00 AM
+
+    var promoSection = document.getElementById('promociones');
+    var promoNav = document.querySelector('a.nav-card[href="#promociones"]');
+
+    if (isPromoOff) {
+      if (promoSection) promoSection.style.display = 'none';
+      if (promoNav) promoNav.style.display = 'none';
+    } else {
+      if (promoSection) promoSection.style.display = '';
+      if (promoNav) promoNav.style.display = '';
+    }
+  }
+
+  // Ejecutar al inicio y agregar al chequeo periódico
+  updatePromoVisibility();
+
+})();
