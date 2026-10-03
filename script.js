@@ -1,4 +1,4 @@
-/* ================================================
+﻿/* ================================================
    PEPI'S LOMOS — script.js  (v3)
    1. Scroll suave + nav activo
    2. Animaciones de entrada (Intersection Observer)
@@ -169,15 +169,21 @@
       var jsonString = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
       var data = JSON.parse(jsonString);
       
-      var availability = {};
+            var productData = {};
       
       var rows = data.table.rows;
       for (var i = 1; i < rows.length; i++) {
         var row = rows[i].c;
-        if (row && row.length >= 3 && row[1] && row[2]) {
+        // Columna 1 = Producto, Columna 2 = Disponible, Columna 3 = Precio (opcional)
+        if (row && row.length >= 3 && row[1]) {
           var productName = normalizeText(row[1].v || "");
-          var isAvailable = (row[2].v || "").toString().trim().toUpperCase();
-          availability[productName] = isAvailable;
+          var isAvailable = row[2] ? (row[2].v || "").toString().trim().toUpperCase() : "SI";
+          var price = (row.length >= 4 && row[3]) ? (row[3].f || row[3].v || "").toString().trim() : "";
+          
+          productData[productName] = {
+            available: isAvailable,
+            price: price
+          };
         }
       }
       
@@ -186,16 +192,34 @@
         var nameEl = card.querySelector('.card-name');
         if (nameEl) {
           var nameText = normalizeText(nameEl.textContent);
-          if (availability[nameText] === 'NO') {
-            if (card.closest('#promociones')) {
-              card.style.display = 'none';
+          var pd = productData[nameText];
+          
+          if (pd) {
+            // 1. Disponibilidad
+            if (pd.available === 'NO') {
+              if (card.closest('#promociones')) {
+                card.style.display = 'none';
+              } else {
+                card.classList.add('agotado-estado');
+                card.style.display = '';
+              }
             } else {
-              card.classList.add('agotado-estado');
+              card.classList.remove('agotado-estado');
               card.style.display = '';
             }
-          } else {
-            card.classList.remove('agotado-estado');
-            card.style.display = '';
+
+            // 2. Precios
+            if (pd.price !== "") {
+              var priceEl = card.querySelector('.card-price');
+              if (priceEl) {
+                // Formatear el "c/u" para que mantenga el estilo visual chico
+                var formattedPrice = pd.price.replace(/(c\/u)/i, '<small class="price-unit">c/u</small>');
+                // Evitar reemplazar si el contenido es exactamente igual para no gastar recursos del navegador
+                if (priceEl.innerHTML !== formattedPrice) {
+                  priceEl.innerHTML = formattedPrice;
+                }
+              }
+            }
           }
         }
       });
@@ -208,3 +232,4 @@
   checkAvailability();
   setInterval(checkAvailability, 10000); // Revisa cada 10 segundos!
 })();
+
