@@ -1,4 +1,4 @@
-﻿/* ================================================
+/* ================================================
    PEPI'S LOMOS — script.js  (v3)
    1. Scroll suave + nav activo
    2. Animaciones de entrada (Intersection Observer)
@@ -239,7 +239,7 @@
     var hour = d.getHours(); // 0 a 23
 
     var isPromoOff = false;
-    if (day === 5 && hour >= 1) isPromoOff = true; // Viernes desde 01:00 AM
+    if (day === 5 && hour >= 8) isPromoOff = true; // Viernes desde 08:00 AM
     if (day === 6) isPromoOff = true;              // Sábado todo el día
     if (day === 0) isPromoOff = true;              // Domingo todo el día
     if (day === 1 && hour < 8) isPromoOff = true;  // Lunes antes de las 08:00 AM
