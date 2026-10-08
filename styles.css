@@ -1,4 +1,4 @@
-/* ================================================
+﻿/* ================================================
    PEPI'S LOMOS â€” styles.css  (v3)
    Paleta: naranja dorado #F5A623, negro #1A1A1A,
            crema calida #FAF3E0, acento #B8860B
@@ -213,13 +213,15 @@ ul { list-style: none; }
   overflow: hidden;
   background-color: #e8d5a3;
 }
+.img-pizza { object-position: center 80%; }
 .card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.35s ease;
 }
-.product-card:hover .card-img { transform: scale(1.05); }
+.product-card:hover .img-pizza { object-position: center 80%; }
+.card-img { transform: scale(1.05); }
 
 /* Placeholder SVG */
 .placeholder-img {
@@ -462,7 +464,8 @@ ul { list-style: none; }
 }
 
 #bebidas .card-img,
-#helados .card-img {
+#helados .img-pizza { object-position: center 80%; }
+.card-img {
   object-fit: contain;
   padding: 1.5rem; /* Margen para que la botella respire y no toque los bordes */
 }
@@ -499,3 +502,4 @@ ul { list-style: none; }
   pointer-events: none;
   letter-spacing: 0.05em;
 }
+
