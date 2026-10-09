@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://docs.google.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://cdn.vercel-insights.com; connect-src 'self' https://docs.google.com https://vitals.vercel-insights.com;" />
   <meta name="description" content="Pepi's Lomos — Carta digital. Los mejores lomitos artesanales." />
   <title>Pepi's Lomos — Carta</title>
   <link rel="icon" type="image/png" href="logo.png" />
@@ -15,7 +15,7 @@
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
 
@@ -477,6 +477,7 @@
   <script src="script.js?v=2"></script>
 </body>
 </html>
+
 
 
 
