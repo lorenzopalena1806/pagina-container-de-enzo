@@ -6,6 +6,12 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://cdn.vercel-insights.com; connect-src 'self' https://docs.google.com https://vitals.vercel-insights.com;" />
   <meta name="description" content="Pepi's Lomos — Carta digital. Los mejores lomitos artesanales." />
   <title>Pepi's Lomos — Carta</title>
+  <link rel="canonical" href="https://menupepislomos.com.ar/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pepi's Lomos — Carta" />
+  <meta property="og:description" content="Pepi's Lomos — Carta digital. Los mejores lomitos artesanales." />
+  <meta property="og:url" content="https://menupepislomos.com.ar/" />
+  <meta property="og:image" content="https://menupepislomos.com.ar/logo.png" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -67,7 +73,18 @@
 </span>
       <span class="nav-card-label">Papas</span>
     </a>
-            <a href="#pizzas" class="nav-card">
+            <a href="#ensaladas" class="nav-card">
+      <span class="nav-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 24 L42 24 C42 36, 34 42, 24 42 C14 42, 6 36, 6 24 Z" fill="#FAF3E0" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M10 24 C8 16, 16 10, 22 16 C24 8, 34 10, 32 20 C38 16, 42 22, 38 24 Z" fill="#6aa84f"/>
+          <circle cx="18" cy="21" r="4" fill="#c0392b"/>
+          <circle cx="29" cy="19" r="4" fill="#c0392b"/>
+        </svg>
+      </span>
+      <span class="nav-card-label">Ensaladas</span>
+    </a>
+    <a href="#pizzas" class="nav-card">
           <span class="nav-card-icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Borde/Masa -->
@@ -327,7 +344,43 @@
     </section>
 
     <!-- BEBIDAS -->
-                    <section class="menu-section" id="pizzas">
+                    <section class="menu-section" id="ensaladas">
+      <div class="section-header">
+        <h2 class="section-title">Ensaladas</h2>
+        <p class="section-desc">Frescas y livianas, para acompañar o como plato principal.</p>
+      </div>
+      <ul class="card-grid">
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/ensalada-lechuga-tomate.jpg" alt="Ensalada de lechuga y tomate" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Ensalada de Lechuga y Tomate</h3>
+              <span class="card-price">$6.500</span>
+            </div>
+            <p class="card-desc">Lechuga fresca y tomate en rodajas.</p>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/ensalada-lechuga-tomate-cebolla.png" alt="Ensalada de lechuga, tomate y cebolla" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Ensalada de Lechuga, Tomate y Cebolla</h3>
+              <span class="card-price">$7.000</span>
+            </div>
+            <p class="card-desc">Lechuga fresca, tomate y cebolla en pluma.</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section class="menu-section" id="pizzas">
       <div class="section-header">
         <h2 class="section-title">Pizzas</h2>
         <p class="section-desc">Masa madre y los mejores ingredientes.</p>
@@ -477,6 +530,8 @@
   <script src="script.js?v=2"></script>
 </body>
 </html>
+
+
 
 
 

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://menupepislomos.com.ar/sitemap.xml
+
