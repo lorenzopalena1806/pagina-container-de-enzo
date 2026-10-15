@@ -232,14 +232,15 @@
   checkAvailability();
   setInterval(function() { checkAvailability(); updatePromoVisibility(); }, 10000); // Revisa cada 10 segundos!
 
-  /* ─── 6. HORARIO DE PROMOS (LUN 8 AM a VIE 1 AM) ─── */
+  /* ─── 6. HORARIO DE PROMOS (LUN 8 AM a JUE 8 AM) ─── */
   function updatePromoVisibility() {
     var d = new Date();
     var day = d.getDay(); // 0=Dom, 1=Lun, ..., 5=Vie, 6=Sab
     var hour = d.getHours(); // 0 a 23
 
     var isPromoOff = false;
-    if (day === 5 && hour >= 8) isPromoOff = true; // Viernes desde 08:00 AM
+    if (day === 4 && hour >= 8) isPromoOff = true; // Jueves desde 08:00 AM
+    if (day === 5) isPromoOff = true;              // Viernes todo el dia
     if (day === 6) isPromoOff = true;              // Sábado todo el día
     if (day === 0) isPromoOff = true;              // Domingo todo el día
     if (day === 1 && hour < 8) isPromoOff = true;  // Lunes antes de las 08:00 AM
