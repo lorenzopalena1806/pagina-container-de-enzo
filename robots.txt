@@ -1,5 +1,6 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://menupepislomos.com.ar/sitemap.xml
+Sitemap: https://cartapepislomos.com.ar/sitemap.xml
+
 
