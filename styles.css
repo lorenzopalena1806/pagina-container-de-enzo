@@ -1,167 +1,347 @@
 /* ================================================
-   PEPI'S LOMOS â€” styles.css  (v3)
+   PEPI'S LOMOS — styles.css (v7 - Neo-Artesanal)
    Paleta: naranja dorado #F5A623, negro #1A1A1A,
-           crema calida #FAF3E0, acento #B8860B
+           crema cálida #FAF3E0, acento #B8860B
+   Tipografías: 'Amatic SC', 'Yanone Kaffeesatz'
    ================================================ */
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
 body {
   font-family: 'Amatic SC', cursive;
   background-color: #FAF3E0;
-  /* Textura de madera suave transparente con SVG inline arreglado */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='wood'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.2' numOctaves='3' result='noise'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.72 0 0 0 0 0.52 0 0 0 0 0.04 0 0 0 0.08 0' in='noise'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23wood)'/%3E%3C/svg%3E");
+  /* Patrón artesanal de puntos sutiles y textura cálida */
+  background-image:
+    radial-gradient(rgba(184, 134, 11, 0.14) 1.25px, transparent 1.25px),
+    radial-gradient(rgba(26, 26, 26, 0.05) 1.25px, #FAF3E0 1.25px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
   color: #1A1A1A;
   line-height: 1.3;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
 
-/* â”€â”€â”€ HEADER â”€â”€â”€ */
-.site-header {
-  background-color: #1A1A1A;
-  /* Textura oscura en el header */
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='overlay'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
-  color: #FAF3E0;
-  padding: 1.25rem 1rem;
-  border-bottom: 5px solid #F5A623;
+img {
+  max-width: 100%;
+  display: block;
 }
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.header-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid #F5A623;
-  object-fit: cover;
-  flex-shrink: 0;
+
+ul {
+  list-style: none;
 }
-.site-title {
-  font-size: 2.6rem;
+
+/* ─── CINTA SUPERIOR INFORMATIVA ─── */
+.top-marquee {
+  background-color: #F5A623;
+  color: #1A1A1A;
+  border-bottom: 2.5px solid #1A1A1A;
+  padding: 0.35rem 0.75rem;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.02rem;
   font-weight: 700;
-  color: #F5A623;
-  text-shadow: 2px 2px 0 #000;
-  line-height: 1.1;
-}
-.site-sub {
-  font-size: 1.25rem;
-  font-style: italic;
-  color: #c8a84b;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-top: 0.2rem;
+  letter-spacing: 0.06em;
+  text-align: center;
 }
 
-/* â”€â”€â”€ NAVBAR DE CATEGORIAS â”€â”€â”€ */
-.category-nav {
-  background-color: #1A1A1A;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 3px solid #F5A623;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+.top-marquee-inner {
+  max-width: 980px;
+  margin: 0 auto;
   display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.75rem;
 }
-.category-nav::-webkit-scrollbar { display: none; }
 
-.nav-card {
+.marquee-dot {
+  color: #1A1A1A;
+  opacity: 0.65;
+}
+
+/* ─── HEADER HERO EMBLEMA ─── */
+.site-header {
+  position: relative;
+  background-color: #1A1A1A;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(245, 166, 35, 0.04) 0px,
+      rgba(245, 166, 35, 0.04) 12px,
+      transparent 12px,
+      transparent 24px
+    ),
+    radial-gradient(circle at 50% 0%, rgba(245, 166, 35, 0.22), transparent 70%);
+  color: #FAF3E0;
+  padding: 1.8rem 1rem 1.6rem;
+  border-bottom: 4px solid #F5A623;
+  text-align: center;
+}
+
+.header-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
-  flex: 1 0 80px;
-  padding: 0.65rem 0.5rem;
-  border-right: 1px solid rgba(245,166,35,0.2);
-  transition: background 0.2s;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header-logo-badge {
+  position: relative;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F5A623 0%, #B8860B 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55), 0 0 0 3px #1A1A1A;
+}
+
+.header-logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 3px solid #1A1A1A;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-kicker {
+  display: inline-block;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background-color: #F5A623;
+  color: #1A1A1A;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  border: 2px solid #1A1A1A;
+  margin-bottom: 0.25rem;
+}
+
+.site-title {
+  font-size: 3.3rem;
+  font-weight: 700;
+  color: #FAF3E0;
+  text-shadow: 3px 3px 0 #F5A623, 5px 5px 0 #000;
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.site-sub {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.2rem;
+  color: #F5A623;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+}
+
+/* ─── NAVBAR DE CATEGORIAS (PILL DOCK FLOTANTE) ─── */
+.category-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(26, 26, 26, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 3px solid #1A1A1A;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  padding: 0.55rem 0.65rem;
+}
+
+.category-nav-track {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.1rem 0.15rem;
+}
+
+.category-nav-track::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  padding: 0.42rem 0.85rem;
+  background-color: #26231F;
+  border: 2px solid #F5A623;
+  border-radius: 999px;
+  box-shadow: 2px 2px 0 #000;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.15s ease;
   cursor: pointer;
 }
-.nav-card:last-child { border-right: none; }
+
 .nav-card:hover,
 .nav-card:focus,
 .nav-card.active {
   background-color: #F5A623;
+  border-color: #FAF3E0;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 #000;
   outline: none;
 }
+
 .nav-card:hover .nav-card-label,
 .nav-card:focus .nav-card-label,
-.nav-card.active .nav-card-label { color: #1A1A1A; }
+.nav-card.active .nav-card-label {
+  color: #1A1A1A;
+}
 
 .nav-card-icon {
-  width: 36px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
-.nav-card-icon svg { width: 100%; height: 100%; }
+
+.nav-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
 
 .nav-card-label {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #F5A623;
+  color: #FAF3E0;
   font-family: 'Amatic SC', cursive;
   white-space: nowrap;
   transition: color 0.2s;
+  line-height: 1;
 }
 
-/* â”€â”€â”€ MENU PRINCIPAL â”€â”€â”€ */
+@media (min-width: 760px) {
+  .category-nav-track {
+    justify-content: center;
+  }
+}
+
+/* ─── MENU PRINCIPAL ─── */
 .menu {
-  max-width: 960px;
+  max-width: 1020px;
   margin: 0 auto;
-  padding-bottom: 3rem;
+  padding: 1.2rem 0.85rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
 }
 
-/* â”€â”€â”€ SECCION â”€â”€â”€ */
+/* ─── SECCION ─── */
 .menu-section {
-  padding: 2rem 1rem 1rem;
-  border-bottom: 3px dashed #c8a84b;
+  padding: 1.5rem 1rem 1.6rem;
+  background-color: rgba(255, 253, 244, 0.65);
+  border: 2.5px solid #1A1A1A;
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 #1A1A1A;
 }
-.menu-section:last-child { border-bottom: none; }
 
-.section-header { margin-bottom: 1.25rem; }
+/* Sección Promociones con estilo destacado */
+.menu-section.promo-showcase {
+  background: linear-gradient(180deg, #fff8e6 0%, #FAF3E0 100%);
+  border: 3px solid #1A1A1A;
+  box-shadow: 6px 6px 0 #F5A623, 9px 9px 0 #1A1A1A;
+}
+
+.section-header {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  border-bottom: 2px dashed #c8a84b;
+  padding-bottom: 0.8rem;
+}
+
+.section-banner {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-tag {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: #1A1A1A;
+  color: #F5A623;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1.5px solid #1A1A1A;
+}
+
+.promo-showcase .section-tag {
+  background-color: #F5A623;
+  color: #1A1A1A;
+}
 
 .section-title {
-  font-size: 2.2rem;
+  font-size: 2.35rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #1A1A1A;
-  border-left: 6px solid #F5A623;
-  padding-left: 0.65rem;
-  line-height: 1.2;
-}
-.section-desc {
-  font-size: 1.3rem;
-  font-style: italic;
-  color: #6b5a2e;
-  margin-top: 0.3rem;
-  padding-left: 0.9rem;
+  line-height: 1.05;
 }
 
-/* â”€â”€â”€ ANIMACIONES DE ENTRADA â”€â”€â”€ */
+.section-desc {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 400;
+  color: #4a3b1e;
+  letter-spacing: 0.02em;
+}
+
+.section-desc strong {
+  color: #1A1A1A;
+  background-color: rgba(245, 166, 35, 0.35);
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+}
+
+/* ─── ANIMACIONES DE ENTRADA ─── */
 .product-card {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.22s ease, transform 0.22s ease,
-    box-shadow 0.2s,
-    border-color 0.2s;
+  transform: translateY(24px);
+  transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.2s ease;
 }
-/* Retraso escalonado para las cards dentro de cada grilla */
+
 .card-grid li:nth-child(1) { transition-delay: 0.00s; }
 .card-grid li:nth-child(2) { transition-delay: 0.04s; }
 .card-grid li:nth-child(3) { transition-delay: 0.08s; }
@@ -173,36 +353,40 @@ ul { list-style: none; }
   transform: translateY(0);
 }
 
-/* â”€â”€â”€ GRID DE CARDS â”€â”€â”€ */
+/* ─── GRID DE CARDS ─── */
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-@media (min-width: 540px) {
-  .card-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 820px) {
-  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem;
 }
 
-/* â”€â”€â”€ PRODUCT CARD base â”€â”€â”€ */
+@media (min-width: 820px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── PRODUCT CARD (ESTILO TICKET ARTESANAL NEO-RETRO) ─── */
 .product-card {
+  position: relative;
   background: #fffdf4;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 2px solid #e0cc99;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 2.5px solid #1A1A1A;
+  box-shadow: 4px 4px 0 #1A1A1A;
   display: flex;
   flex-direction: column;
 }
+
 .product-card:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.13);
-  transform: translateY(-3px) !important;
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0 #1A1A1A;
 }
+
 .product-card.featured {
-  border-color: #F5A623;
-  box-shadow: 0 3px 12px rgba(245,166,35,0.22);
+  background: #fffaf0;
+  border-color: #1A1A1A;
+  box-shadow: 4px 4px 0 #F5A623, 6px 6px 0 #1A1A1A;
 }
 
 /* Imagen */
@@ -212,14 +396,19 @@ ul { list-style: none; }
   aspect-ratio: 3 / 2;
   overflow: hidden;
   background-color: #e8d5a3;
+  border-bottom: 2.5px solid #1A1A1A;
 }
+
 .card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.35s ease;
 }
-.product-card:hover .card-img { transform: scale(1.05); }
+
+.product-card:hover .card-img {
+  transform: scale(1.05);
+}
 
 /* Placeholder SVG */
 .placeholder-img {
@@ -227,250 +416,357 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
 }
-.placeholder-img svg { width: 100%; height: 100%; }
+
+.placeholder-img svg {
+  width: 100%;
+  height: 100%;
+}
 
 /* Badge sobre imagen */
 .card-badge {
   position: absolute;
-  top: 0.4rem;
-  left: 0.4rem;
+  top: 0.5rem;
+  left: 0.5rem;
   background-color: #F5A623;
   color: #1A1A1A;
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.2rem 0.45rem;
-  border-radius: 3px;
-  border: 1.5px solid #1A1A1A;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 2px solid #1A1A1A;
+  box-shadow: 2px 2px 0 #1A1A1A;
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  z-index: 2;
 }
 
 /* Cuerpo de la card */
 .card-body {
-  padding: 0.85rem 0.9rem 0.9rem;
+  padding: 0.85rem 0.9rem 0.95rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.45rem;
   flex: 1;
 }
+
 .card-header-row {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 0.5rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1.5px dashed #e0cc99;
 }
+
 .card-name {
-  font-size: 1.45rem;
+  font-size: 1.48rem;
   font-weight: 700;
   color: #1A1A1A;
-  line-height: 1.2;
+  line-height: 1.15;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
+
 .card-price {
-  font-size: 1.87rem;
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 1.55rem;
   font-weight: 700;
-  color: #B8860B;
+  background-color: #1A1A1A;
+  color: #F5A623;
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  border: 1.5px solid #1A1A1A;
   white-space: nowrap;
   flex-shrink: 0;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-.price-unit {
-  font-size: 0.6em;
-  margin-left: 0.15em;
+  line-height: 1.1;
 }
 
-/* â”€â”€â”€ DESCRIPCION EXPANDIBLE â”€â”€â”€ */
+.product-card.featured .card-price {
+  background-color: #F5A623;
+  color: #1A1A1A;
+}
+
+.price-unit {
+  font-size: 0.65em;
+  margin-left: 0.2em;
+}
+
+/* ─── DESCRIPCION EXPANDIBLE ─── */
 .card-desc {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 1.15rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #4a3b1e;
-  line-height: 1.45;
-  /* Truncado por defecto: 2 lineas */
+  line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   transition: none;
 }
+
 .card-desc.expanded {
   display: block;
   -webkit-line-clamp: unset;
   overflow: visible;
 }
+
 .btn-expand {
   align-self: flex-start;
-  margin-top: 0.25rem;
-  background: none;
-  border: none;
-  padding: 0;
+  margin-top: auto;
+  padding: 0.15rem 0.55rem;
+  background-color: #FAF3E0;
+  border: 1.5px solid #B8860B;
+  border-radius: 999px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #B8860B;
+  color: #1A1A1A;
   cursor: pointer;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  transition: color 0.15s;
+  transition: background-color 0.15s, color 0.15s;
 }
-.btn-expand:hover { color: #F5A623; }
-.btn-expand:focus { outline: 2px solid #F5A623; border-radius: 2px; }
 
-/* â”€â”€â”€ BOTON VOLVER ARRIBA â”€â”€â”€ */
+.btn-expand:hover {
+  background-color: #F5A623;
+  border-color: #1A1A1A;
+}
+
+.btn-expand:focus {
+  outline: 2px solid #F5A623;
+}
+
+/* ─── BOTON VOLVER ARRIBA ─── */
 .btn-top {
   position: fixed;
   bottom: 1.5rem;
   right: 1.25rem;
   z-index: 200;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   background-color: #F5A623;
   color: #1A1A1A;
   border: 2.5px solid #1A1A1A;
+  box-shadow: 3px 3px 0 #1A1A1A;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-  /* Oculto por defecto */
   opacity: 0;
   transform: translateY(12px);
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
 }
+
 .btn-top svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
 }
+
 .btn-top.visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+
 .btn-top:hover {
   background-color: #1A1A1A;
   color: #F5A623;
   border-color: #F5A623;
 }
-.btn-top:focus { outline: 3px solid #1A1A1A; }
 
-/* â”€â”€â”€ FOOTER â”€â”€â”€ */
+.btn-top:focus {
+  outline: 3px solid #1A1A1A;
+}
+
+/* ─── FOOTER ─── */
 .site-footer {
   background-color: #1A1A1A;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='overlay'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E");
+    repeating-linear-gradient(
+      45deg,
+      rgba(245, 166, 35, 0.03) 0px,
+      rgba(245, 166, 35, 0.03) 14px,
+      transparent 14px,
+      transparent 28px
+    );
   color: #FAF3E0;
-  padding: 2.5rem 1rem 1.5rem;
+  padding: 2.8rem 1rem 1.8rem;
   border-top: 5px solid #F5A623;
 }
+
 .footer-inner {
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  text-align: center;
+  gap: 1.8rem;
 }
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #24211D;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  border: 2px solid #F5A623;
+  box-shadow: 4px 4px 0 #000;
+}
+
 .footer-logo {
-  width: 75px;
-  height: 75px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  border: 3px solid #F5A623;
+  border: 2.5px solid #F5A623;
   object-fit: cover;
 }
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.footer-brand-name {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+  color: #F5A623;
+  line-height: 1;
+}
+
+.footer-brand-sub {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1rem;
+  color: #FAF3E0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.1rem;
   width: 100%;
 }
-@media (min-width: 600px) {
-  .footer-grid { grid-template-columns: repeat(3, 1fr); text-align: left; }
-  .footer-inner { text-align: left; align-items: flex-start; }
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
+.footer-block {
+  background-color: #24211D;
+  border: 2px solid rgba(245, 166, 35, 0.45);
+  border-radius: 12px;
+  padding: 1.2rem 1.1rem;
+  text-align: center;
+  box-shadow: 4px 4px 0 #000;
+}
+
 .footer-heading {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #F5A623;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
   font-family: 'Amatic SC', cursive;
-  border-bottom: 1px solid rgba(245,166,35,0.3);
-  padding-bottom: 0.3rem;
+  border-bottom: 1.5px dashed rgba(245, 166, 35, 0.35);
+  padding-bottom: 0.35rem;
 }
+
 .footer-block p {
-  font-size: 1.25rem;
-  color: #c8b07a;
-  line-height: 1.7;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #e8d5a3;
+  line-height: 1.55;
 }
-.footer-block strong { color: #FAF3E0; }
+
+.footer-block strong {
+  color: #FAF3E0;
+  font-weight: 700;
+}
 
 .ig-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background-color: #F5A623;
   color: #1A1A1A;
   font-weight: 700;
-  font-size: 1.3rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: 4px;
-  border: 2px solid #F5A623;
-  margin-top: 0.4rem;
-  transition: background 0.2s, color 0.2s;
+  font-size: 1.35rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 999px;
+  border: 2px solid #1A1A1A;
+  box-shadow: 3px 3px 0 #000;
+  margin-top: 0.35rem;
+  transition: transform 0.15s, background-color 0.2s, color 0.2s;
   font-family: 'Amatic SC', cursive;
 }
-.ig-link:hover, .ig-link:focus {
-  background-color: transparent;
-  color: #F5A623;
+
+.ig-link:hover,
+.ig-link:focus {
+  background-color: #FAF3E0;
+  color: #1A1A1A;
+  transform: translateY(-2px);
   outline: none;
 }
-.ig-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+.ig-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
 
 .footer-copy {
-  font-size: 1.1rem;
-  color: #5a4a2a;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.05rem;
+  color: #8c7647;
   border-top: 1px solid #2e2e2e;
   padding-top: 1rem;
   width: 100%;
   text-align: center;
+  letter-spacing: 0.06em;
 }
 
-/* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
+/* ─── RESPONSIVE DESKTOP ─── */
 @media (min-width: 600px) {
-  .menu-section { padding: 2.5rem 1.5rem 1.5rem; }
-  .site-title { font-size: 2.2rem; }
-  .header-logo { width: 95px; height: 95px; }
+  .menu-section {
+    padding: 2rem 1.6rem 1.8rem;
+  }
+  .site-title {
+    font-size: 3.8rem;
+  }
+  .header-logo {
+    width: 102px;
+    height: 102px;
+  }
 }
-
-
-
-
 
 /* ================================================
-   AJUSTE DE IMAGENES PARA BEBIDAS
+   AJUSTE DE IMAGENES PARA BEBIDAS Y HELADOS
    Botellas y latas son verticales, no deben cortarse
    ================================================ */
 #bebidas .card-img-wrap,
 #helados .card-img-wrap {
-  background-color: #ffffff; /* Fondo blanco limpio para productos de catalogo */
+  background-color: #ffffff;
 }
 
 #bebidas .card-img,
 #helados .card-img {
   object-fit: contain;
-  padding: 1.5rem; /* Margen para que la botella respire y no toque los bordes */
+  padding: 1.35rem;
 }
-
-
-
-
-
 
 /* ================================================
    ESTADO AGOTADO (SIN STOCK)
@@ -489,34 +785,94 @@ ul { list-style: none; }
   background-color: #c0392b;
   color: #FAF3E0;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  padding: 0.2rem 1.5rem;
-  border-radius: 5px;
-  border: 4px solid #FAF3E0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  padding: 0.2rem 1.3rem;
+  border-radius: 6px;
+  border: 3.5px solid #FAF3E0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   z-index: 10;
   pointer-events: none;
   letter-spacing: 0.05em;
 }
 
-
 /* ENCUADRE PIZZA */
-.img-pizza { object-position: center 85%; }
-
+.img-pizza {
+  object-position: center 85%;
+}
 
 /* ================================================
-   MOVIL: 2 productos por fila
+   MOVIL: 2 productos por fila bien proporcionados
    ================================================ */
 @media (max-width: 539px) {
-  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-  .card-body { padding: 0.55rem 0.55rem 0.65rem; gap: 0.2rem; }
-  .card-header-row { flex-direction: column; align-items: flex-start; gap: 0.1rem; }
-  .card-name { font-size: 1.2rem; }
-  .card-price { font-size: 1.55rem; }
-  .card-desc { font-size: 1rem; line-height: 1.3; }
-  .btn-expand { font-size: 0.95rem; }
-  .card-badge { font-size: 0.8rem; padding: 0.1rem 0.35rem; }
-  #bebidas .card-img, #helados .card-img { padding: 0.8rem; }
-  .product-card.agotado-estado::after { font-size: 1.8rem; padding: 0.1rem 0.6rem; border-width: 3px; }
+  .top-marquee {
+    font-size: 0.88rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .menu {
+    padding: 0.9rem 0.55rem 2.5rem;
+    gap: 1.5rem;
+  }
+  .menu-section {
+    padding: 1.1rem 0.65rem 1.15rem;
+    border-radius: 14px;
+    box-shadow: 4px 4px 0 #1A1A1A;
+  }
+  .menu-section.promo-showcase {
+    box-shadow: 4px 4px 0 #F5A623, 6px 6px 0 #1A1A1A;
+  }
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+  .product-card {
+    border-width: 2px;
+    box-shadow: 3px 3px 0 #1A1A1A;
+    border-radius: 10px;
+  }
+  .product-card.featured {
+    box-shadow: 3px 3px 0 #F5A623, 5px 5px 0 #1A1A1A;
+  }
+  .card-body {
+    padding: 0.55rem 0.55rem 0.65rem;
+    gap: 0.3rem;
+  }
+  .card-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding-bottom: 0.35rem;
+  }
+  .card-name {
+    font-size: 1.22rem;
+    line-height: 1.12;
+  }
+  .card-price {
+    font-size: 1.28rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 5px;
+  }
+  .card-desc {
+    font-size: 0.98rem;
+    line-height: 1.28;
+  }
+  .btn-expand {
+    font-size: 0.85rem;
+    padding: 0.1rem 0.45rem;
+  }
+  .card-badge {
+    font-size: 0.76rem;
+    padding: 0.12rem 0.4rem;
+    top: 0.35rem;
+    left: 0.35rem;
+  }
+  #bebidas .card-img,
+  #helados .card-img {
+    padding: 0.75rem;
+  }
+  .product-card.agotado-estado::after {
+    font-size: 1.7rem;
+    padding: 0.1rem 0.55rem;
+    border-width: 2.5px;
+  }
 }

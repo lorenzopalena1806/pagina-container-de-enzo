@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Yanone+Kaffeesatz:wght@400;700&display=swap" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -25,28 +25,42 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- CINTA SUPERIOR INFORMATIVA -->
+  <div class="top-marquee" aria-label="Información rápida">
+    <div class="top-marquee-inner">
+      <span>Enrique Bodereu 7783 · Villa Warcalde, Córdoba</span>
+      <span class="marquee-dot">•</span>
+      <span>Lun y Mar 20:00 a 23:40 hs · Mié a Dom 20:00 a 00:00 hs</span>
+    </div>
+  </div>
+
+  <!-- HEADER HERO EMBLEMA -->
   <header class="site-header">
     <div class="header-inner">
-      <img src="logo.png" alt="Logo Pepi's Lomos" class="header-logo" width="80" height="80" />
+      <div class="header-logo-badge">
+        <img src="logo.png" alt="Logo Pepi's Lomos" class="header-logo" width="96" height="96" />
+      </div>
       <div class="header-text">
+        <span class="header-kicker">Carta Digital</span>
         <h1 class="site-title">Pepi's Lomos</h1>
-        <p class="site-sub">Lomiteria artesanal</p>
+        <p class="site-sub">Lomitería artesanal</p>
       </div>
     </div>
   </header>
 
-  <!-- NAVBAR DE CATEGORIAS -->
+  <!-- NAVBAR DE CATEGORIAS (FLOATING PILL DOCK) -->
   <nav class="category-nav" id="navbar" aria-label="Categorias de la carta">
-        <a href="#promociones" class="nav-card">
-      <span class="nav-card-icon">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M24 6 L29.15 16.45 L40.69 18.13 L32.34 26.26 L34.31 37.74 L24 32.32 L13.69 37.74 L15.66 26.26 L7.31 18.13 L18.85 16.45 Z" fill="#F5A623" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span class="nav-card-label">Promos</span>
-    </a><a href="#lomitos" class="nav-card">
-      <span class="nav-card-icon">
+    <div class="category-nav-track">
+      <a href="#promociones" class="nav-card">
+        <span class="nav-card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 6 L29.15 16.45 L40.69 18.13 L32.34 26.26 L34.31 37.74 L24 32.32 L13.69 37.74 L15.66 26.26 L7.31 18.13 L18.85 16.45 Z" fill="#F5A623" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="nav-card-label">Promos</span>
+      </a>
+      <a href="#lomitos" class="nav-card">
+        <span class="nav-card-icon">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 16 C 6 4, 42 4, 42 16 Z" fill="#F5A623"/>
             <rect x="8" y="18" width="12" height="4" rx="2" fill="#c0392b"/>
@@ -55,27 +69,24 @@
             <rect x="4" y="29" width="40" height="6" rx="3" fill="#8b5a2b"/>
             <path d="M6 37 C 6 45, 42 45, 42 37 Z" fill="#F5A623"/>
           </svg>
-</span>
-      <span class="nav-card-label">Lomitos</span>
-    </a>
-    <a href="#pizzas" class="nav-card">
-          <span class="nav-card-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Borde/Masa -->
-  <path d="M8 12 Q24 4 40 12 L38 16 Q24 8 10 16 Z" fill="#e8d5a3"/>
-  <!-- Queso -->
-  <path d="M10 16 Q24 8 38 16 L24 42 Z" fill="#F5A623"/>
-  <!-- Pepperoni / Tomates -->
-  <circle cx="24" cy="18" r="3" fill="#c0392b"/>
-  <circle cx="18" cy="26" r="3" fill="#c0392b"/>
-  <circle cx="30" cy="28" r="3" fill="#c0392b"/>
-  <circle cx="24" cy="34" r="3" fill="#c0392b"/>
-</svg>
-          </span>
-          <span class="nav-card-label">Pizzas</span>
-        </a>
-    <a href="#papas" class="nav-card">
-      <span class="nav-card-icon">
+        </span>
+        <span class="nav-card-label">Lomitos</span>
+      </a>
+      <a href="#pizzas" class="nav-card">
+        <span class="nav-card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 12 Q24 4 40 12 L38 16 Q24 8 10 16 Z" fill="#e8d5a3"/>
+            <path d="M10 16 Q24 8 38 16 L24 42 Z" fill="#F5A623"/>
+            <circle cx="24" cy="18" r="3" fill="#c0392b"/>
+            <circle cx="18" cy="26" r="3" fill="#c0392b"/>
+            <circle cx="30" cy="28" r="3" fill="#c0392b"/>
+            <circle cx="24" cy="34" r="3" fill="#c0392b"/>
+          </svg>
+        </span>
+        <span class="nav-card-label">Pizzas</span>
+      </a>
+      <a href="#papas" class="nav-card">
+        <span class="nav-card-icon">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="12" y="10" width="4" height="20" rx="2" fill="#F5A623"/>
             <rect x="20" y="6" width="4" height="24" rx="2" fill="#e8d5a3"/>
@@ -86,34 +97,34 @@
             <path d="M10 26 L14 44 C 14 46, 34 46, 34 44 L38 26 Z" fill="#c0392b"/>
             <ellipse cx="24" cy="34" rx="6" ry="4" fill="#F5A623"/>
           </svg>
-</span>
-      <span class="nav-card-label">Papas</span>
-    </a>
-    <a href="#ensaladas" class="nav-card">
-      <span class="nav-card-icon">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 24 L42 24 C42 36, 34 42, 24 42 C14 42, 6 36, 6 24 Z" fill="#FAF3E0" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
-          <path d="M10 24 C8 16, 16 10, 22 16 C24 8, 34 10, 32 20 C38 16, 42 22, 38 24 Z" fill="#6aa84f"/>
-          <circle cx="18" cy="21" r="4" fill="#c0392b"/>
-          <circle cx="29" cy="19" r="4" fill="#c0392b"/>
-        </svg>
-      </span>
-      <span class="nav-card-label">Ensaladas</span>
-    </a>
-    <a href="#helados" class="nav-card">
-      <span class="nav-card-icon">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="21" y="32" width="6" height="13" rx="3" fill="#e8d5a3"/>
-          <path d="M13 12 C13 4, 35 4, 35 12 L35 31 C35 33.5, 33 35, 30.5 35 L17.5 35 C15 35, 13 33.5, 13 31 Z" fill="#8b5a2b"/>
-          <path d="M28 4.6 C33 5.5, 35 8, 35 12 L35 15 C32 15, 29 12.5, 29.5 9 C27.5 8.5, 27 6, 28 4.6 Z" fill="#FAF3E0"/>
-          <path d="M13 22 C16 25, 19 20, 22 23 C25 26, 28 21, 31 24 C33 25.5, 34.5 24, 35 23" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <path d="M17 11 L17 18" stroke="#c49a6c" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-      </span>
-      <span class="nav-card-label">Helados</span>
-    </a>
-    <a href="#bebidas" class="nav-card">
-      <span class="nav-card-icon">
+        </span>
+        <span class="nav-card-label">Papas</span>
+      </a>
+      <a href="#ensaladas" class="nav-card">
+        <span class="nav-card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 24 L42 24 C42 36, 34 42, 24 42 C14 42, 6 36, 6 24 Z" fill="#FAF3E0" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M10 24 C8 16, 16 10, 22 16 C24 8, 34 10, 32 20 C38 16, 42 22, 38 24 Z" fill="#6aa84f"/>
+            <circle cx="18" cy="21" r="4" fill="#c0392b"/>
+            <circle cx="29" cy="19" r="4" fill="#c0392b"/>
+          </svg>
+        </span>
+        <span class="nav-card-label">Ensaladas</span>
+      </a>
+      <a href="#helados" class="nav-card">
+        <span class="nav-card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="21" y="32" width="6" height="13" rx="3" fill="#e8d5a3"/>
+            <path d="M13 12 C13 4, 35 4, 35 12 L35 31 C35 33.5, 33 35, 30.5 35 L17.5 35 C15 35, 13 33.5, 13 31 Z" fill="#8b5a2b"/>
+            <path d="M28 4.6 C33 5.5, 35 8, 35 12 L35 15 C32 15, 29 12.5, 29.5 9 C27.5 8.5, 27 6, 28 4.6 Z" fill="#FAF3E0"/>
+            <path d="M13 22 C16 25, 19 20, 22 23 C25 26, 28 21, 31 24 C33 25.5, 34.5 24, 35 23" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M17 11 L17 18" stroke="#c49a6c" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="nav-card-label">Helados</span>
+      </a>
+      <a href="#bebidas" class="nav-card">
+        <span class="nav-card-icon">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M24 16 L28 6 L34 6" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
             <path d="M14 16 L18 42 C 18 44, 30 44, 30 42 L34 16 Z" fill="#F5A623"/>
@@ -122,24 +133,22 @@
             <path d="M18 42 L22 16" stroke="#e8a020" stroke-width="2"/>
             <path d="M26 42 L28 16" stroke="#e8a020" stroke-width="2"/>
           </svg>
-</span>
-      <span class="nav-card-label">Bebidas</span>
-    </a>
-    
-            
-    
-        
-    
-    
+        </span>
+        <span class="nav-card-label">Bebidas</span>
+      </a>
+    </div>
   </nav>
 
   <!-- MENU PRINCIPAL -->
   <main class="menu">
 
-        <!-- PROMOCIONES -->
-    <section class="menu-section" id="promociones">
+    <!-- PROMOCIONES -->
+    <section class="menu-section promo-showcase" id="promociones">
       <div class="section-header">
-        <h2 class="section-title">Promociones</h2>
+        <div class="section-banner">
+          <span class="section-tag">Combos Especiales</span>
+          <h2 class="section-title">Promociones</h2>
+        </div>
         <p class="section-desc">Aprovechá nuestros combos. <strong>Válidas solo pagando en efectivo.</strong></p>
       </div>
       <ul class="card-grid">
@@ -199,14 +208,17 @@
             <p class="card-desc">1 Pizza Margarita de masa madre + 2 Lomos Clásicos con papas bastón.</p>
           </div>
         </li>
+
       </ul>
     </section>
 
-<!-- LOMITOS -->
+    <!-- LOMITOS -->
     <section class="menu-section" id="lomitos">
-<!-- font: Bebas Neue -->
       <div class="section-header">
-        <h2 class="section-title">Lomitos</h2>
+        <div class="section-banner">
+          <span class="section-tag">Especialidad de la Casa</span>
+          <h2 class="section-title">Lomitos</h2>
+        </div>
         <p class="section-desc">Bife de lomo a la plancha, tierno y jugoso.</p>
       </div>
       <ul class="card-grid">
@@ -294,19 +306,22 @@
       </ul>
     </section>
 
+    <!-- PIZZAS -->
     <section class="menu-section" id="pizzas">
       <div class="section-header">
-        <h2 class="section-title">Pizzas</h2>
+        <div class="section-banner">
+          <span class="section-tag">Horno y Masa Madre</span>
+          <h2 class="section-title">Pizzas</h2>
+        </div>
         <p class="section-desc">Masa madre y los mejores ingredientes.</p>
       </div>
       <ul class="card-grid">
 
         <li class="product-card">
-          
-            <div class="card-img-wrap">
+          <div class="card-img-wrap">
             <img src="img/pizza-margarita.jpg" alt="Pizza Margarita" class="card-img img-pizza" loading="lazy" width="600" height="400" />
           </div>
-<div class="card-body">
+          <div class="card-body">
             <div class="card-header-row">
               <h3 class="card-name">Margarita</h3>
               <span class="card-price">$13.500</span>
@@ -318,10 +333,13 @@
       </ul>
     </section>
 
+    <!-- PAPAS Y ACOMPAÑAMIENTOS -->
     <section class="menu-section" id="papas">
-<!-- font: Fjalla One -->
       <div class="section-header">
-        <h2 class="section-title">Papas y acompañamientos</h2>
+        <div class="section-banner">
+          <span class="section-tag">Para Picar</span>
+          <h2 class="section-title">Papas y acompañamientos</h2>
+        </div>
         <p class="section-desc">Para complementar tu lomito o picar entre amigos.</p>
       </div>
       <ul class="card-grid">
@@ -366,14 +384,16 @@
           </div>
         </li>
 
-        
-
       </ul>
     </section>
 
+    <!-- ENSALADAS -->
     <section class="menu-section" id="ensaladas">
       <div class="section-header">
-        <h2 class="section-title">Ensaladas</h2>
+        <div class="section-banner">
+          <span class="section-tag">Naturales</span>
+          <h2 class="section-title">Ensaladas</h2>
+        </div>
         <p class="section-desc">Frescas y livianas, para acompañar o como plato principal.</p>
       </div>
       <ul class="card-grid">
@@ -407,9 +427,13 @@
       </ul>
     </section>
 
+    <!-- HELADOS -->
     <section class="menu-section" id="helados">
       <div class="section-header">
-        <h2 class="section-title">Helados</h2>
+        <div class="section-banner">
+          <span class="section-tag">Postres</span>
+          <h2 class="section-title">Helados</h2>
+        </div>
         <p class="section-desc">El cierre perfecto, bien helado.</p>
       </div>
       <ul class="card-grid">
@@ -443,10 +467,13 @@
       </ul>
     </section>
 
+    <!-- BEBIDAS -->
     <section class="menu-section" id="bebidas">
-<!-- font: Yanone Kaffeesatz -->
       <div class="section-header">
-        <h2 class="section-title">Bebidas</h2>
+        <div class="section-banner">
+          <span class="section-tag">Refrescantes</span>
+          <h2 class="section-title">Bebidas</h2>
+        </div>
         <p class="section-desc">Bien frías, para acompañar tu menú.</p>
       </div>
       <ul class="card-grid">
@@ -493,28 +520,19 @@
       </ul>
     </section>
 
-    <!-- PAPAS Y ACOMPAÑAMIENTOS -->
-    
-
-    <!-- BEBIDAS -->
-                    
-
-    
-
-    
-
-    <!-- HELADOS -->
-    
-
-    <!-- POSTRES -->
-    
-
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contacto">
     <div class="footer-inner">
-      <img src="logo.png" alt="Pepi's Lomos" class="footer-logo" width="75" height="75" />
+      <div class="footer-brand">
+        <img src="logo.png" alt="Pepi's Lomos" class="footer-logo" width="80" height="80" />
+        <div class="footer-brand-text">
+          <span class="footer-brand-name">Pepi's Lomos</span>
+          <span class="footer-brand-sub">Lomitería artesanal · Córdoba</span>
+        </div>
+      </div>
+
       <div class="footer-grid">
         <div class="footer-block">
           <h3 class="footer-heading">Horarios</h3>
@@ -525,7 +543,7 @@
         </div>
         <div class="footer-block">
           <h3 class="footer-heading">Donde estamos</h3>
-          <p>Enrique Bodereu 7783</p>
+          <p><strong>Enrique Bodereu 7783</strong></p>
           <p>Villa Warcalde, Córdoba</p>
         </div>
         <div class="footer-block">
@@ -538,6 +556,7 @@
           </a>
         </div>
       </div>
+
       <p class="footer-copy">2026 Pepi's Lomos — Todos los derechos reservados.</p>
     </div>
   </footer>
@@ -545,39 +564,3 @@
   <script src="script.js?v=2"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
