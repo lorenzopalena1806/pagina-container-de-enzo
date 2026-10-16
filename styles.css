@@ -48,8 +48,8 @@ ul { list-style: none; }
 .site-title {
   font-size: 2.6rem;
   font-weight: 700;
-  color: #F5A623;
-  text-shadow: 2px 2px 0 #000;
+  color: #FAF3E0;
+  text-shadow: 3px 3px 0 #F5A623, 5px 5px 0 #000;
   line-height: 1.1;
 }
 .site-sub {
