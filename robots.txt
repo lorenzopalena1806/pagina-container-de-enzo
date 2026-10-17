@@ -1,6 +1,6 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://cartapepislomos.com.ar/sitemap.xml
+Sitemap: https://www.cartapepislomos.com.ar/sitemap.xml
 
 
