@@ -522,55 +522,118 @@ ul { list-style: none; }
 }
 
 /* ================================================
-   CREDITO CREADOR: BARRIO COMMERCE
+   CREDITO CREADOR: BARRIO COMMERCE (BANNER DESTACADO)
    ================================================ */
 .creator-credit {
   width: 100%;
+  margin-top: 0.5rem;
+}
+
+.creator-banner {
   display: flex;
-  justify-content: center;
-  margin-top: 0.2rem;
-}
-
-.creator-link {
-  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.4rem 0.95rem;
-  background-color: #242424;
-  border: 1.5px solid rgba(245, 166, 35, 0.45);
-  border-radius: 999px;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.1rem 1.35rem;
+  background: linear-gradient(135deg, #222520 0%, #171a16 100%);
+  border: 2px solid #F5A623;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.creator-link:hover,
-.creator-link:focus {
-  border-color: #F5A623;
-  background-color: #2d2d2d;
-  transform: translateY(-2px);
+@media (min-width: 600px) {
+  .creator-banner {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.creator-banner:hover,
+.creator-banner:focus {
+  transform: translateY(-3px);
+  border-color: #25D366;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.22);
   outline: none;
 }
 
-.creator-label {
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: #c8b07a;
-  letter-spacing: 0.04em;
+.creator-banner-main {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
 }
 
 .creator-logo {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
   object-fit: cover;
   background-color: #ffffff;
-  border: 1.5px solid #0b6623;
+  border: 2px solid #F5A623;
   flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
 }
 
-.creator-name {
-  font-size: 1.15rem;
-  font-weight: 700;
+.creator-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.creator-kicker {
+  font-size: 1.25rem;
+  color: #c8b07a;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.creator-kicker strong {
   color: #FAF3E0;
+  font-size: 1.35rem;
   letter-spacing: 0.05em;
+}
+
+.creator-pitch {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #F5A623;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+}
+
+.creator-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background-color: #25D366;
+  color: #111111;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  border: 2px solid #1A1A1A;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.creator-banner:hover .creator-wa-btn {
+  background-color: #2ee673;
+  transform: scale(1.03);
+}
+
+.wa-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
