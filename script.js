@@ -208,8 +208,16 @@
               card.style.display = '';
             }
 
-            // 2. Precios
-            if (pd.price !== "") {
+            // 2. Precios (ignorar precios anteriores sin actualizar en la hoja de calculo)
+            var legacySheetPrices = {
+              'lomo clasico': '$18.000',
+              'lomo maky': '$21.000',
+              'rock and roll': '$24.000',
+              'doble todo': '$28.000',
+              'lomo veggie': '$21.000',
+              'lomo al plato': '$21.000'
+            };
+            if (pd.price !== "" && pd.price !== legacySheetPrices[nameText]) {
               var priceEl = card.querySelector('.card-price');
               if (priceEl) {
                 // Formatear el "c/u" para que mantenga el estilo visual chico
