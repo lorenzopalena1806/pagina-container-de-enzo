@@ -195,6 +195,7 @@
           var pd = productData[nameText];
           if (!pd) {
             if (nameText === 'super pancho con aderezo') pd = productData['super pancho'] || productData['pancho'] || productData['super pancho con aderezo'];
+            if (nameText === 'super pancho con papas') pd = productData['super pancho con papas'] || productData['pancho con papas'];
             if (nameText === 'panceta y verdeo') pd = productData['pizza panceta y verdeo'] || productData['pizza de panceta y verdeo'] || productData['panceta y verdeo'];
             if (nameText === 'cono de papa') pd = productData['cono de papas'] || productData['cono papa'] || productData['cono de papa'];
           }
