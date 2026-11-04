@@ -38,7 +38,7 @@
       "https://www.cartapepislomos.com.ar/img/lomo-maky.jpg",
       "https://www.cartapepislomos.com.ar/img/lomo-clasico-2.jpg"
     ],
-    "servesCuisine": ["Lomitos Artesanales", "Pizzas de Masa Madre", "Comida Rápida Artesanal", "Argentina"],
+    "servesCuisine": ["Lomitos Artesanales", "Panchos", "Pizzas de Masa Madre", "Comida Rápida Artesanal", "Argentina"],
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -76,7 +76,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Yanone+Kaffeesatz:wght@400;700&display=swap" />
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="styles.css?v=12" />
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -122,6 +122,21 @@
           </svg>
 </span>
       <span class="nav-card-label">Lomitos</span>
+    </a>
+    <a href="#panchos" class="nav-card">
+      <span class="nav-card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pan inferior -->
+          <path d="M6 22 C6 32, 12 36, 24 36 C36 36, 42 32, 42 22 Z" fill="#e8d5a3"/>
+          <!-- Salchicha -->
+          <rect x="4" y="17" width="40" height="11" rx="5.5" fill="#c0392b"/>
+          <!-- Pan superior -->
+          <path d="M7 21 C7 13, 14 11, 24 11 C34 11, 41 13, 41 21" stroke="#F5A623" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Mostaza zigzag -->
+          <path d="M11 22.5 Q14 18 17 22.5 Q20 27 23 22.5 Q26 18 29 22.5 Q32 27 35 22.5 Q37 19 39 22.5" stroke="#F5A623" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        </svg>
+      </span>
+      <span class="nav-card-label">Panchos</span>
     </a>
     <a href="#pizzas" class="nav-card">
           <span class="nav-card-icon">
@@ -359,6 +374,43 @@
       </ul>
     </section>
 
+    <!-- PANCHOS -->
+    <section class="menu-section" id="panchos">
+      <div class="section-header">
+        <h2 class="section-title">Panchos</h2>
+        <p class="section-desc">Súper panchos con los mejores aderezos y papas.</p>
+      </div>
+      <ul class="card-grid">
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/super-pancho.jpg" alt="Súper Pancho con aderezo" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Súper Pancho con Aderezo</h3>
+              <span class="card-price">$6.000</span>
+            </div>
+            <p class="card-desc">Súper pancho con variedad de aderezos a elección. <strong>Adición de papas: $1.500</strong></p>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/papas-simples.jpg" alt="Cono de papa" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Cono de Papa</h3>
+              <span class="card-price">$4.000</span>
+            </div>
+            <p class="card-desc">Cono individual de papas fritas crocantes, ideal para acompañar tu pancho.</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
     <section class="menu-section" id="pizzas">
       <div class="section-header">
         <h2 class="section-title">Pizzas</h2>
@@ -367,16 +419,28 @@
       <ul class="card-grid">
 
         <li class="product-card">
-          
-            <div class="card-img-wrap">
+          <div class="card-img-wrap">
             <img src="img/pizza-margarita.jpg" alt="Pizza Margarita" class="card-img img-pizza" loading="lazy" width="600" height="400" />
           </div>
-<div class="card-body">
+          <div class="card-body">
             <div class="card-header-row">
               <h3 class="card-name">Margarita</h3>
               <span class="card-price">$13.500</span>
             </div>
             <p class="card-desc">4 porciones. Clásica italiana con salsa de tomate, queso mozzarella y hojas de albahaca fresca.</p>
+          </div>
+        </li>
+
+        <li class="product-card">
+          <div class="card-img-wrap">
+            <img src="img/pizza-panceta-verdeo.jpg" alt="Pizza de Panceta y Verdeo" class="card-img" loading="lazy" width="600" height="400" />
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-name">Panceta y Verdeo</h3>
+              <span class="card-price">$15.000</span>
+            </div>
+            <p class="card-desc">4 porciones. Masa madre con salsa de tomate, queso mozzarella, panceta crocante y cebolla de verdeo fresca.</p>
           </div>
         </li>
 
@@ -624,7 +688,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
 
