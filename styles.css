@@ -100,13 +100,23 @@ ul { list-style: none; }
 .nav-card.active .nav-card-label { color: #1A1A1A; }
 
 .nav-card-icon {
-  width: 36px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
 }
-.nav-card-icon svg { width: 100%; height: 100%; }
+.nav-card:hover .nav-card-icon,
+.nav-card:focus .nav-card-icon,
+.nav-card.active .nav-card-icon {
+  transform: translateY(-2px) scale(1.08);
+}
+.nav-card-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 .nav-card-label {
   font-size: 1.15rem;
