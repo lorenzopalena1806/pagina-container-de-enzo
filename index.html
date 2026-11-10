@@ -76,7 +76,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Yanone+Kaffeesatz:wght@400;700&display=swap" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="stylesheet" href="styles.css?v=15" />
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -102,6 +102,7 @@
   </header>
 
   <!-- NAVBAR DE CATEGORIAS -->
+  <div class="category-nav-wrap">
   <nav class="category-nav" id="navbar" aria-label="Categorias de la carta">
     <a href="#promociones" class="nav-card">
       <span class="nav-card-icon">
@@ -233,6 +234,14 @@
       <span class="nav-card-label">Bebidas</span>
     </a>
   </nav>
+  <button type="button" class="nav-scroll-hint" id="navScrollHint" aria-label="Deslizar para ver más categorías">
+    <span class="nav-scroll-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="9 6 15 12 9 18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+  </div>
 
   <!-- MENU PRINCIPAL -->
   <main class="menu">
@@ -732,7 +741,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
 

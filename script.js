@@ -62,6 +62,49 @@
   window.addEventListener('scroll', setActiveLink, { passive: true });
   setActiveLink();
 
+  /* ─── 1b. INDICADOR Y MOVIMIENTO INICIAL DE CATEGORIAS EN CELULAR ─── */
+  var navScrollHint = document.getElementById('navScrollHint');
+  var userInteractedNav = false;
+
+  function updateNavScrollHint() {
+    if (!navbar || !navScrollHint) return;
+    var hasOverflow = navbar.scrollWidth > navbar.clientWidth + 6;
+    var atEnd = navbar.scrollLeft + navbar.clientWidth >= navbar.scrollWidth - 10;
+    if (hasOverflow && !atEnd) {
+      navScrollHint.classList.remove('hidden');
+    } else {
+      navScrollHint.classList.add('hidden');
+    }
+  }
+
+  if (navbar) {
+    navbar.addEventListener('scroll', updateNavScrollHint, { passive: true });
+    navbar.addEventListener('touchstart', function () { userInteractedNav = true; }, { passive: true });
+    navbar.addEventListener('pointerdown', function () { userInteractedNav = true; }, { passive: true });
+    window.addEventListener('resize', updateNavScrollHint, { passive: true });
+    updateNavScrollHint();
+
+    if (navScrollHint) {
+      navScrollHint.addEventListener('click', function () {
+        userInteractedNav = true;
+        navbar.scrollBy({ left: 180, behavior: 'smooth' });
+      });
+    }
+
+    // Movimiento suave inicial para mostrar que hay más categorías
+    setTimeout(function () {
+      updateNavScrollHint();
+      if (!userInteractedNav && navbar.scrollWidth > navbar.clientWidth + 15 && window.scrollY < 60) {
+        navbar.scrollTo({ left: 65, behavior: 'smooth' });
+        setTimeout(function () {
+          if (!userInteractedNav) {
+            navbar.scrollTo({ left: 0, behavior: 'smooth' });
+          }
+        }, 650);
+      }
+    }, 700);
+  }
+
 
   /* ─── 2. ANIMACIONES DE ENTRADA (Intersection Observer) ─── */
 
